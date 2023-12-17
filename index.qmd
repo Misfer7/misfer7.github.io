@@ -1,8 +1,8 @@
 ---
-title: "YOUR NAME" 
+title: "Misfer Mohammed Hamid" 
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: img/profile.png
+  image: Profile.png
   image-width: 16em
   image-shape: round # rectangle  round  rounded
   
@@ -21,21 +21,21 @@ about:
       href: https://GITHUB_USERNAME.github.io/resume-example.pdf
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
+      href: mailto:mh103@geneseo.edu
 
 ---
 
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
+Misfer Mohammed Hamid majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Misfer enjoys spending time playing soccer.
 
 ## Education
 
 State University of New York at Geneseo | Geneseo, NY <br>
-B.S. in Data Analytics | Aug 2022 - May 2026 <br>
-Minor in Business Administration 
+B.S. in Data Analytics | Jan 2021 - Dec 2025 <br>
+ 
 
 ## Experience
 
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
+MCC | Student Aid Intern | Feb 2022 - Dec 2022
 
 
