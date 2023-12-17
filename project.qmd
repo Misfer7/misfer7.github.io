@@ -151,107 +151,137 @@ ggplot(data = clean_year) +
 ```
 
 ### Number of buildings
+```{r}
 nyc_estate <- read_csv("https://bendesjardins.github.io/nyc-rolling-sales.csv")
 
-# Count the number of buildings
+
 num_buildings <- nrow(nyc_estate)
 
-# Print the result
 cat("The number of buildings is:", num_buildings, "\n")
+```
+
 
 ### number of apartments per borough
-
+```{r}
 apartments_per_borough <- nyc_estate %>%
   group_by(BOROUGH) %>%
   summarize(Number_of_Apartments = n())
 
-# Print the result
 print(apartments_per_borough)
+
+ggplot(apartments_per_borough, aes(x = factor(BOROUGH), y = Number_of_Apartments, fill = factor(BOROUGH))) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.7) +
+  labs(title = "Number of Apartments per Borough",
+       x = "Borough",
+       y = "Number of Apartments",
+       fill = "Borough") +
+  theme_minimal()
+ 
+
+```
 
 ### buildings in same zipcodes
 
+```{r}
 buildings_per_zip <- nyc_estate %>%
   group_by(`ZIP CODE`) %>%
   summarize(Number_of_Buildings = n())
 
-# Print the result
 print(buildings_per_zip)
+```
+
 
 ### buildings in same tax class
- buildings_per_tax_class <- nyc_estate %>%
+```{r}
+buildings_per_tax_class <- nyc_estate %>%
   group_by(`TAX CLASS AT PRESENT`) %>%
   summarize(Number_of_Buildings = n())
 
-# Print the result
-print(buildings_per_tax_class)
-
- ggplot(nyc_estate, aes(x = `TAX CLASS AT PRESENT`)) +
-  geom_bar(fill = "skyblue", color = "black") +
-  labs(title = "Number of Buildings in Each Tax Class",
+# Create a scatter plot for the number of buildings per tax class
+ggplot(buildings_per_tax_class, aes(x = `TAX CLASS AT PRESENT`, y = Number_of_Buildings, color = `TAX CLASS AT PRESENT`)) +
+  geom_point(size = 3) +
+  labs(title = "Number of Buildings per Tax Class",
        x = "Tax Class",
-       y = "Number of Buildings") +
-  theme_minimal()
+       y = "Number of Buildings",
+       color = "Tax Class") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
  
 ### number of commercial units 
 
+```{r}
 commercial_units <- nyc_estate %>%
   filter(`BUILDING CLASS CATEGORY` %in% c("21 OFFICE BUILDINGS"))
 
-# Sum the total commercial units
 total_commercial_units <- sum(commercial_units$`TOTAL UNITS`)
 
-# Print the result
+
 cat("Total Commercial Units:", total_commercial_units, "\n")
+```
+
 
 ### number of residential Units
 
+
+```{r}
 residential_units <- nyc_estate %>%
   filter(`BUILDING CLASS CATEGORY` %in% c("01 ONE FAMILY DWELLINGS", "02 TWO FAMILY DWELLINGS", "10 COOPS - ELEVATOR APARTMENTS"))
 
-# Sum the total residential units
+
 total_residential_units <- sum(residential_units$`TOTAL UNITS`)
 
-# Print the result
 cat("Total Residential Units:", total_residential_units, "\n")
+```
  
 ### Highest AND lowest sold Residential unit
 
+```{r}
 index_highest <- which.max(residential_units$`SALE PRICE`)
 
-# Identify the index of the lowest sales price
 index_lowest <- which.min(residential_units$`SALE PRICE`)
 
-# Extract the corresponding rows for highest and lowest sales prices
+
 highest_price_property <- residential_units[index_highest, ]
 lowest_price_property <- residential_units[index_lowest, ]
 
-# Print the results
 cat("Residential Unit with Highest Sales Price:\n")
 print(highest_price_property)
 
+```
+```{r}
 cat("\nResidential Unit with Lowest Sales Price:\n")
 print(lowest_price_property)
+```
+
 
 
 ### Highest and lowest sold Commercial unit
 
+```{r}
 commercial_units <- nyc_estate %>%
   filter(`BUILDING CLASS CATEGORY` %in% c("21 OFFICE BUILDINGS"))
 
-# Identify the row with the highest sales price for commercial units
+
 highest_price_property_commercial <- commercial_units[which.max(commercial_units$`SALE PRICE`), ]
 
-# Identify the row with the lowest sales price for commercial units
+
 lowest_price_property_commercial <- commercial_units[which.min(commercial_units$`SALE PRICE`), ]
 
-# Print the results
+
 cat("Commercial Unit with Highest Sales Price:\n")
 print(highest_price_property_commercial)
-
+```
+```{r}
 cat("\nCommercial Unit with Lowest Sales Price:\n")
 print(lowest_price_property_commercial)
+```
 
-##scatter plot of highest and lowest sold units
+
+### scatter plot of highest and lowest sold units
+
+```{r}
 ggplot(commercial_units, aes(x = `SALE PRICE`, y = `TOTAL UNITS`)) +
   geom_point(color = "skyblue", size = 3) +
   geom_point(data = highest_price_property_commercial, aes(x = `SALE PRICE`, y = `TOTAL UNITS`), color = "red", size = 3) +
@@ -261,30 +291,36 @@ ggplot(commercial_units, aes(x = `SALE PRICE`, y = `TOTAL UNITS`)) +
        y = "Total Units") +
   theme_minimal()
  
+```
+
  
 ### Number of buildings per Neighborhood
-# Group by NEIGHBORHOOD and count the number of buildings in each neighborhood
+
+```{r}
 buildings_per_neighborhood <- nyc_estate %>%
   group_by(`NEIGHBORHOOD`) %>%
   summarize(Number_of_Buildings = n())
 
-# Print the result
+
 print(buildings_per_neighborhood)
+```
+
 
 ### Number of Buildings most and lowest in a block
+```{r}
 buildings_per_block <- nyc_estate %>%
   group_by(BLOCK) %>%
   summarize(Number_of_Buildings = n())
 
-# Find the block with the most buildings
+
 most_buildings_block <- buildings_per_block %>%
   filter(Number_of_Buildings == max(Number_of_Buildings))
 
-# Find the block with the fewest buildings
+
 fewest_buildings_block <- buildings_per_block %>%
   filter(Number_of_Buildings == min(Number_of_Buildings))
 
-# Print the results
+
 cat("Block with Most Buildings:\n")
 print(most_buildings_block)
 
@@ -298,3 +334,5 @@ ggplot(buildings_per_block, aes(x = Number_of_Buildings)) +
        y = "Frequency") +
   theme_minimal()
   
+```
+

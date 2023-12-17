@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "DANL Project",
+    "section": "",
+    "text": "Introduction to the NYC Rolling Sales Dataset\nThe NYC Rolling Sales dataset provides a comprehensive overview of real estate transactions within New York City. Compiled from the city’s rolling sales data, this dataset encompasses a wide range of property sales, offering insights into the dynamic and diverse real estate market of one of the world’s most iconic metropolitan areas.\nKey Information:\nSource: NYC Department of Finance Coverage: The dataset includes information on sales transactions across various boroughs, capturing the intricacies of the city’s real estate landscape. Columns: Essential details such as property address, sale price, sale date, borough, tax class code, and other pertinent information are included. Objective: The primary objective of this dataset is to facilitate analysis and exploration of real estate trends, patterns, and market dynamics within New York City. Researchers, analysts, and enthusiasts can leverage this dataset to gain insights into property values, transaction volumes, and the distribution of sales across different tax class codes and boroughs.\nUsage: This dataset is valuable for a variety of purposes, including market research, trend analysis, and the identification of patterns that may influence property values. It provides a robust foundation for those interested in understanding the factors influencing real estate transactions in the diverse neighborhoods of New York City.\nAccessing the Data: The dataset is publicly accessible and can be obtained from the NYC Department of Finance. In this analysis, we utilize the dataset available at https://bendesjardins.github.io/nyc-rolling-sales.csv."
+  },
+  {
     "objectID": "project.html#summary-statistics",
     "href": "project.html#summary-statistics",
     "title": "DANL Project",
@@ -18,7 +25,7 @@
     "href": "project.html#comparison-with-sale-price",
     "title": "DANL Project",
     "section": "2.3 Comparison with Sale Price",
-    "text": "2.3 Comparison with Sale Price\n\n2.3.1 Sale Price versus Tax Class At Time of Sale\n\nggplot(data = clean_sale) +\n  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`)), \n                     color = `TAX CLASS AT TIME OF SALE`), bins = 100) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`, scales = 'free') +\n  labs(x = \"Log of `SALE PRICE`\")\n\n\n\n\nThey all have some resemblance of a normal distribution, with those at a tax class of 2 having the most normal distribution. Those in the 4 class has the most skewed data with many outliers in proportion to the rest of those in 1 and 2.\n\n\n2.3.2 Sale Price versus Year Built\n\nclean_year_sale &lt;- clean_sale %&gt;% \n  filter(!(`YEAR BUILT` == 0))\n\nggplot(data = clean_year_sale) +\n  geom_point(aes(x = log(as.numeric(`SALE PRICE`)), y = `YEAR BUILT`), alpha = .02) +\n  scale_y_continuous(limits = c(1900, 2020))\n\n\n\ncor(as.numeric(clean_year_sale$`SALE PRICE`), clean_year_sale$`YEAR BUILT`)\n\n[1] 0.006318972\n\n\nAs the figure shows, there is very little correlation between year built and sale price. If we take the correlation value between them, we get less than 0.01 which means there is essentially no correlation.\n\n\n2.3.3 Tax Class at Time of Sale versus Year Built\n\nggplot(data = clean_year) +\n  geom_histogram(aes(x = `YEAR BUILT`), bins = 50) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`) + \n  scale_x_continuous(limits = c(1900, 2020))"
+    "text": "2.3 Comparison with Sale Price\n\n2.3.1 Sale Price versus Tax Class At Time of Sale\n\nggplot(data = clean_sale) +\n  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`)), \n                     color = `TAX CLASS AT TIME OF SALE`), bins = 100) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`, scales = 'free') +\n  labs(x = \"Log of `SALE PRICE`\")\n\n\n\n\nThey all have some resemblance of a normal distribution, with those at a tax class of 2 having the most normal distribution. Those in the 4 class has the most skewed data with many outliers in proportion to the rest of those in 1 and 2.\n\n\n2.3.2 Sale Price versus Year Built\n\nclean_year_sale &lt;- clean_sale %&gt;% \n  filter(!(`YEAR BUILT` == 0))\n\nggplot(data = clean_year_sale) +\n  geom_point(aes(x = log(as.numeric(`SALE PRICE`)), y = `YEAR BUILT`), alpha = .02) +\n  scale_y_continuous(limits = c(1900, 2020))\n\n\n\ncor(as.numeric(clean_year_sale$`SALE PRICE`), clean_year_sale$`YEAR BUILT`)\n\n[1] 0.006318972\n\n\nAs the figure shows, there is very little correlation between year built and sale price. If we take the correlation value between them, we get less than 0.01 which means there is essentially no correlation.\n\n\n2.3.3 Tax Class at Time of Sale versus Year Built\n\nggplot(data = clean_year) +\n  geom_histogram(aes(x = `YEAR BUILT`), bins = 50) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`) + \n  scale_x_continuous(limits = c(1900, 2020))\n\n\n\n\n\n\n2.3.4 Number of buildings\nnyc_estate &lt;- read_csv(“https://bendesjardins.github.io/nyc-rolling-sales.csv”)"
   },
   {
     "objectID": "posts/starwars/starwars_df.html",
@@ -44,23 +51,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "YOUR NAME",
+    "title": "Misfer Mohammed Hamid",
     "section": "",
-    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+    "text": "Misfer Mohammed Hamid majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Misfer enjoys spending time playing soccer."
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "YOUR NAME",
+    "title": "Misfer Mohammed Hamid",
     "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Business Administration"
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Jan 2021 - Dec 2025"
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
-    "title": "YOUR NAME",
+    "title": "Misfer Mohammed Hamid",
     "section": "Experience",
-    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
+    "text": "Experience\nMCC | Student Aid Intern | Feb 2022 - Dec 2022"
   },
   {
     "objectID": "blog-listing.html",

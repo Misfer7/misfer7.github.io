@@ -156,6 +156,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#distribution-of-key-data" id="toc-distribution-of-key-data" class="nav-link" data-scroll-target="#distribution-of-key-data"><span class="header-section-number">2.2</span> Distribution of Key Data</a></li>
   <li><a href="#comparison-with-sale-price" id="toc-comparison-with-sale-price" class="nav-link" data-scroll-target="#comparison-with-sale-price"><span class="header-section-number">2.3</span> Comparison with Sale Price</a></li>
   </ul></li>
+  <li><a href="#count-the-number-of-buildings" id="toc-count-the-number-of-buildings" class="nav-link" data-scroll-target="#count-the-number-of-buildings"><span class="header-section-number">3</span> Count the number of buildings</a></li>
+  <li><a href="#print-the-result" id="toc-print-the-result" class="nav-link" data-scroll-target="#print-the-result"><span class="header-section-number">4</span> Print the result</a></li>
+  <li><a href="#print-the-result-1" id="toc-print-the-result-1" class="nav-link" data-scroll-target="#print-the-result-1"><span class="header-section-number">5</span> Print the result</a></li>
+  <li><a href="#print-the-result-2" id="toc-print-the-result-2" class="nav-link" data-scroll-target="#print-the-result-2"><span class="header-section-number">6</span> Print the result</a></li>
+  <li><a href="#print-the-result-3" id="toc-print-the-result-3" class="nav-link" data-scroll-target="#print-the-result-3"><span class="header-section-number">7</span> Print the result</a></li>
+  <li><a href="#sum-the-total-commercial-units" id="toc-sum-the-total-commercial-units" class="nav-link" data-scroll-target="#sum-the-total-commercial-units"><span class="header-section-number">8</span> Sum the total commercial units</a></li>
+  <li><a href="#print-the-result-4" id="toc-print-the-result-4" class="nav-link" data-scroll-target="#print-the-result-4"><span class="header-section-number">9</span> Print the result</a></li>
+  <li><a href="#sum-the-total-residential-units" id="toc-sum-the-total-residential-units" class="nav-link" data-scroll-target="#sum-the-total-residential-units"><span class="header-section-number">10</span> Sum the total residential units</a></li>
+  <li><a href="#print-the-result-5" id="toc-print-the-result-5" class="nav-link" data-scroll-target="#print-the-result-5"><span class="header-section-number">11</span> Print the result</a></li>
+  <li><a href="#identify-the-index-of-the-lowest-sales-price" id="toc-identify-the-index-of-the-lowest-sales-price" class="nav-link" data-scroll-target="#identify-the-index-of-the-lowest-sales-price"><span class="header-section-number">12</span> Identify the index of the lowest sales price</a></li>
+  <li><a href="#extract-the-corresponding-rows-for-highest-and-lowest-sales-prices" id="toc-extract-the-corresponding-rows-for-highest-and-lowest-sales-prices" class="nav-link" data-scroll-target="#extract-the-corresponding-rows-for-highest-and-lowest-sales-prices"><span class="header-section-number">13</span> Extract the corresponding rows for highest and lowest sales prices</a></li>
+  <li><a href="#print-the-results" id="toc-print-the-results" class="nav-link" data-scroll-target="#print-the-results"><span class="header-section-number">14</span> Print the results</a></li>
+  <li><a href="#identify-the-row-with-the-highest-sales-price-for-commercial-units" id="toc-identify-the-row-with-the-highest-sales-price-for-commercial-units" class="nav-link" data-scroll-target="#identify-the-row-with-the-highest-sales-price-for-commercial-units"><span class="header-section-number">15</span> Identify the row with the highest sales price for commercial units</a></li>
+  <li><a href="#identify-the-row-with-the-lowest-sales-price-for-commercial-units" id="toc-identify-the-row-with-the-lowest-sales-price-for-commercial-units" class="nav-link" data-scroll-target="#identify-the-row-with-the-lowest-sales-price-for-commercial-units"><span class="header-section-number">16</span> Identify the row with the lowest sales price for commercial units</a></li>
+  <li><a href="#print-the-results-1" id="toc-print-the-results-1" class="nav-link" data-scroll-target="#print-the-results-1"><span class="header-section-number">17</span> Print the results</a></li>
+  <li><a href="#group-by-neighborhood-and-count-the-number-of-buildings-in-each-neighborhood" id="toc-group-by-neighborhood-and-count-the-number-of-buildings-in-each-neighborhood" class="nav-link" data-scroll-target="#group-by-neighborhood-and-count-the-number-of-buildings-in-each-neighborhood"><span class="header-section-number">18</span> Group by NEIGHBORHOOD and count the number of buildings in each neighborhood</a></li>
+  <li><a href="#print-the-result-6" id="toc-print-the-result-6" class="nav-link" data-scroll-target="#print-the-result-6"><span class="header-section-number">19</span> Print the result</a></li>
+  <li><a href="#find-the-block-with-the-most-buildings" id="toc-find-the-block-with-the-most-buildings" class="nav-link" data-scroll-target="#find-the-block-with-the-most-buildings"><span class="header-section-number">20</span> Find the block with the most buildings</a></li>
+  <li><a href="#find-the-block-with-the-fewest-buildings" id="toc-find-the-block-with-the-fewest-buildings" class="nav-link" data-scroll-target="#find-the-block-with-the-fewest-buildings"><span class="header-section-number">21</span> Find the block with the fewest buildings</a></li>
+  <li><a href="#print-the-results-2" id="toc-print-the-results-2" class="nav-link" data-scroll-target="#print-the-results-2"><span class="header-section-number">22</span> Print the results</a></li>
   </ul>
 </nav>
     </div>
@@ -192,6 +212,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Introduction to the NYC Rolling Sales Dataset</p>
+<p>The NYC Rolling Sales dataset provides a comprehensive overview of real estate transactions within New York City. Compiled from the city’s rolling sales data, this dataset encompasses a wide range of property sales, offering insights into the dynamic and diverse real estate market of one of the world’s most iconic metropolitan areas.</p>
+<p>Key Information:</p>
+<p>Source: NYC Department of Finance Coverage: The dataset includes information on sales transactions across various boroughs, capturing the intricacies of the city’s real estate landscape. Columns: Essential details such as property address, sale price, sale date, borough, tax class code, and other pertinent information are included. Objective: The primary objective of this dataset is to facilitate analysis and exploration of real estate trends, patterns, and market dynamics within New York City. Researchers, analysts, and enthusiasts can leverage this dataset to gain insights into property values, transaction volumes, and the distribution of sales across different tax class codes and boroughs.</p>
+<p>Usage: This dataset is valuable for a variety of purposes, including market research, trend analysis, and the identification of patterns that may influence property values. It provides a robust foundation for those interested in understanding the factors influencing real estate transactions in the diverse neighborhoods of New York City.</p>
+<p>Accessing the Data: The dataset is publicly accessible and can be obtained from the NYC Department of Finance. In this analysis, we utilize the dataset available at https://bendesjardins.github.io/nyc-rolling-sales.csv.</p>
 </section>
 <section id="data" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Data</h1>
@@ -299,10 +325,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-
-
+</section>
+<section id="number-of-buildings" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="number-of-buildings"><span class="header-section-number">2.3.4</span> Number of buildings</h3>
+<p>nyc_estate &lt;- read_csv(“https://bendesjardins.github.io/nyc-rolling-sales.csv”)</p>
 </section>
 </section>
+</section>
+<section id="count-the-number-of-buildings" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Count the number of buildings</h1>
+<p>num_buildings &lt;- nrow(nyc_estate)</p>
+</section>
+<section id="print-the-result" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Print the result</h1>
+<p>cat(“The number of buildings is:”, num_buildings, “”)</p>
+<section id="number-of-apartments-per-borough" class="level3" data-number="4.0.1">
+<h3 data-number="4.0.1" class="anchored" data-anchor-id="number-of-apartments-per-borough"><span class="header-section-number">4.0.1</span> number of apartments per borough</h3>
+<p>apartments_per_borough &lt;- nyc_estate %&gt;% group_by(BOROUGH) %&gt;% summarize(Number_of_Apartments = n())</p>
+</section>
+</section>
+<section id="print-the-result-1" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Print the result</h1>
+<p>print(apartments_per_borough)</p>
+<section id="buildings-in-same-zipcodes" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="buildings-in-same-zipcodes"><span class="header-section-number">5.0.1</span> buildings in same zipcodes</h3>
+<p>buildings_per_zip &lt;- nyc_estate %&gt;% group_by(<code>ZIP CODE</code>) %&gt;% summarize(Number_of_Buildings = n())</p>
+</section>
+</section>
+<section id="print-the-result-2" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Print the result</h1>
+<p>print(buildings_per_zip)</p>
+<section id="buildings-in-same-tax-class" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="buildings-in-same-tax-class"><span class="header-section-number">6.0.1</span> buildings in same tax class</h3>
+<p>buildings_per_tax_class &lt;- nyc_estate %&gt;% group_by(<code>TAX CLASS AT PRESENT</code>) %&gt;% summarize(Number_of_Buildings = n())</p>
+</section>
+</section>
+<section id="print-the-result-3" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Print the result</h1>
+<p>print(buildings_per_tax_class)</p>
+<p>ggplot(nyc_estate, aes(x = <code>TAX CLASS AT PRESENT</code>)) + geom_bar(fill = “skyblue”, color = “black”) + labs(title = “Number of Buildings in Each Tax Class”, x = “Tax Class”, y = “Number of Buildings”) + theme_minimal()</p>
+<section id="number-of-commercial-units" class="level3" data-number="7.0.1">
+<h3 data-number="7.0.1" class="anchored" data-anchor-id="number-of-commercial-units"><span class="header-section-number">7.0.1</span> number of commercial units</h3>
+<p>commercial_units &lt;- nyc_estate %&gt;% filter(<code>BUILDING CLASS CATEGORY</code> %in% c(“21 OFFICE BUILDINGS”))</p>
+</section>
+</section>
+<section id="sum-the-total-commercial-units" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Sum the total commercial units</h1>
+<p>total_commercial_units &lt;- sum(commercial_units$<code>TOTAL UNITS</code>)</p>
+</section>
+<section id="print-the-result-4" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Print the result</h1>
+<p>cat(“Total Commercial Units:”, total_commercial_units, “”)</p>
+<section id="number-of-residential-units" class="level3" data-number="9.0.1">
+<h3 data-number="9.0.1" class="anchored" data-anchor-id="number-of-residential-units"><span class="header-section-number">9.0.1</span> number of residential Units</h3>
+<p>residential_units &lt;- nyc_estate %&gt;% filter(<code>BUILDING CLASS CATEGORY</code> %in% c(“01 ONE FAMILY DWELLINGS”, “02 TWO FAMILY DWELLINGS”, “10 COOPS - ELEVATOR APARTMENTS”))</p>
+</section>
+</section>
+<section id="sum-the-total-residential-units" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Sum the total residential units</h1>
+<p>total_residential_units &lt;- sum(residential_units$<code>TOTAL UNITS</code>)</p>
+</section>
+<section id="print-the-result-5" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Print the result</h1>
+<p>cat(“Total Residential Units:”, total_residential_units, “”)</p>
+<section id="highest-and-lowest-sold-residential-unit" class="level3" data-number="11.0.1">
+<h3 data-number="11.0.1" class="anchored" data-anchor-id="highest-and-lowest-sold-residential-unit"><span class="header-section-number">11.0.1</span> Highest AND lowest sold Residential unit</h3>
+<p>index_highest &lt;- which.max(residential_units$<code>SALE PRICE</code>)</p>
+</section>
+</section>
+<section id="identify-the-index-of-the-lowest-sales-price" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Identify the index of the lowest sales price</h1>
+<p>index_lowest &lt;- which.min(residential_units$<code>SALE PRICE</code>)</p>
+</section>
+<section id="extract-the-corresponding-rows-for-highest-and-lowest-sales-prices" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Extract the corresponding rows for highest and lowest sales prices</h1>
+<p>highest_price_property &lt;- residential_units[index_highest, ] lowest_price_property &lt;- residential_units[index_lowest, ]</p>
+</section>
+<section id="print-the-results" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Print the results</h1>
+<p>cat(“Residential Unit with Highest Sales Price:”) print(highest_price_property)</p>
+<p>cat(“Unit with Lowest Sales Price:”) print(lowest_price_property)</p>
+<section id="highest-and-lowest-sold-commercial-unit" class="level3" data-number="14.0.1">
+<h3 data-number="14.0.1" class="anchored" data-anchor-id="highest-and-lowest-sold-commercial-unit"><span class="header-section-number">14.0.1</span> Highest and lowest sold Commercial unit</h3>
+<p>commercial_units &lt;- nyc_estate %&gt;% filter(<code>BUILDING CLASS CATEGORY</code> %in% c(“21 OFFICE BUILDINGS”))</p>
+</section>
+</section>
+<section id="identify-the-row-with-the-highest-sales-price-for-commercial-units" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Identify the row with the highest sales price for commercial units</h1>
+<p>highest_price_property_commercial &lt;- commercial_units[which.max(commercial_units$<code>SALE PRICE</code>), ]</p>
+</section>
+<section id="identify-the-row-with-the-lowest-sales-price-for-commercial-units" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Identify the row with the lowest sales price for commercial units</h1>
+<p>lowest_price_property_commercial &lt;- commercial_units[which.min(commercial_units$<code>SALE PRICE</code>), ]</p>
+</section>
+<section id="print-the-results-1" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Print the results</h1>
+<p>cat(“Commercial Unit with Highest Sales Price:”) print(highest_price_property_commercial)</p>
+<p>cat(“Unit with Lowest Sales Price:”) print(lowest_price_property_commercial)</p>
+<p>##scatter plot of highest and lowest sold units ggplot(commercial_units, aes(x = <code>SALE PRICE</code>, y = <code>TOTAL UNITS</code>)) + geom_point(color = “skyblue”, size = 3) + geom_point(data = highest_price_property_commercial, aes(x = <code>SALE PRICE</code>, y = <code>TOTAL UNITS</code>), color = “red”, size = 3) + geom_point(data = lowest_price_property_commercial, aes(x = <code>SALE PRICE</code>, y = <code>TOTAL UNITS</code>), color = “green”, size = 3) + labs(title = “Scatter Plot for Highest and Lowest Sold Commercial Units”, x = “Sale Price”, y = “Total Units”) + theme_minimal()</p>
+<section id="number-of-buildings-per-neighborhood" class="level3" data-number="17.0.1">
+<h3 data-number="17.0.1" class="anchored" data-anchor-id="number-of-buildings-per-neighborhood"><span class="header-section-number">17.0.1</span> Number of buildings per Neighborhood</h3>
+</section>
+</section>
+<section id="group-by-neighborhood-and-count-the-number-of-buildings-in-each-neighborhood" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Group by NEIGHBORHOOD and count the number of buildings in each neighborhood</h1>
+<p>buildings_per_neighborhood &lt;- nyc_estate %&gt;% group_by(<code>NEIGHBORHOOD</code>) %&gt;% summarize(Number_of_Buildings = n())</p>
+</section>
+<section id="print-the-result-6" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Print the result</h1>
+<p>print(buildings_per_neighborhood)</p>
+<section id="number-of-buildings-most-and-lowest-in-a-block" class="level3" data-number="19.0.1">
+<h3 data-number="19.0.1" class="anchored" data-anchor-id="number-of-buildings-most-and-lowest-in-a-block"><span class="header-section-number">19.0.1</span> Number of Buildings most and lowest in a block</h3>
+<p>buildings_per_block &lt;- nyc_estate %&gt;% group_by(BLOCK) %&gt;% summarize(Number_of_Buildings = n())</p>
+</section>
+</section>
+<section id="find-the-block-with-the-most-buildings" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Find the block with the most buildings</h1>
+<p>most_buildings_block &lt;- buildings_per_block %&gt;% filter(Number_of_Buildings == max(Number_of_Buildings))</p>
+</section>
+<section id="find-the-block-with-the-fewest-buildings" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Find the block with the fewest buildings</h1>
+<p>fewest_buildings_block &lt;- buildings_per_block %&gt;% filter(Number_of_Buildings == min(Number_of_Buildings))</p>
+</section>
+<section id="print-the-results-2" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Print the results</h1>
+<p>cat(“Block with Most Buildings:”) print(most_buildings_block)</p>
+<p>cat(“Block with Fewest Buildings:”) print(fewest_buildings_block)</p>
+<p>ggplot(buildings_per_block, aes(x = Number_of_Buildings)) + geom_freqpoly(binwidth = 1, fill = “skyblue”, color = “black”, alpha = 0.7) + labs(title = “Frequency Polygon of Number of Buildings per Block”, x = “Number of Buildings”, y = “Frequency”) + theme_minimal()</p>
+
+
 </section>
 
 </main> <!-- /main -->
