@@ -1,0 +1,338 @@
+---
+title: DANL Project
+subtitle: "Data-Driven Mastery: Unlocking Business Potential"
+author: 
+  - Kohl Courtwright
+  - Benjamin DesJardins
+  - AJ Forte
+  - Misfer Hamid
+  - Shannon Pierce
+
+toc: true
+toc-title: "Table of Contents"
+toc-depth: 2
+number-sections: true
+
+fig-width: 9
+
+execute:
+  code-tools: true
+  message: false
+  warning: false
+
+from: markdown+emoji
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(0,10,0,0))
+                )
+          )
+```
+
+# Introduction
+Introduction to the NYC Rolling Sales Dataset
+
+The NYC Rolling Sales dataset provides a comprehensive overview of real estate transactions within New York City. Compiled from the city's rolling sales data, this dataset encompasses a wide range of property sales, offering insights into the dynamic and diverse real estate market of one of the world's most iconic metropolitan areas.
+
+Key Information:
+
+Source: NYC Department of Finance
+Coverage: The dataset includes information on sales transactions across various boroughs, capturing the intricacies of the city's real estate landscape.
+Columns: Essential details such as property address, sale price, sale date, borough, tax class code, and other pertinent information are included.
+Objective:
+The primary objective of this dataset is to facilitate analysis and exploration of real estate trends, patterns, and market dynamics within New York City. Researchers, analysts, and enthusiasts can leverage this dataset to gain insights into property values, transaction volumes, and the distribution of sales across different tax class codes and boroughs.
+
+Usage:
+This dataset is valuable for a variety of purposes, including market research, trend analysis, and the identification of patterns that may influence property values. It provides a robust foundation for those interested in understanding the factors influencing real estate transactions in the diverse neighborhoods of New York City.
+
+Accessing the Data:
+The dataset is publicly accessible and can be obtained from the NYC Department of Finance. In this analysis, we utilize the dataset available at https://bendesjardins.github.io/nyc-rolling-sales.csv.
+
+# Data
+
+The data.frame `nyc_estate` is a set of data that is a record of every building or building unit (apartment, etc.) sold in the New York City property market over a 12-month period. It is available at <https://www.kaggle.com/datasets/new-york-city/nyc-property-sales> for free use.
+
+## Summary Statistics
+
+```{r}
+nyc_estate <- read_csv("https://bendesjardins.github.io/nyc-rolling-sales.csv")
+```
+
+```{r}
+#| results: asis
+#| echo: false
+rmarkdown::paged_table(nyc_estate) 
+```
+
+## Distribution of Key Data
+
+### Sale Price
+
+```{r}
+clean_sale <- nyc_estate %>% 
+  filter(!(`SALE PRICE` == "-"))
+
+ggplot(data = clean_sale) +
+  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`))), bins = 200) +
+  labs(x = "Log of `Sale Price`")
+```
+
+After taking the log of `Sale Price`, we can see that there seems to be a pretty normal distrbution with a few outliers near the lower range of data.
+
+### TAX CLASS AT TIME OF SALE
+
+```{r}
+ggplot(data = nyc_estate) +
+  geom_bar(aes(x = `TAX CLASS AT TIME OF SALE`))
+```
+
+`TAX CLASS AT TIME OF SALE` is a categorical variable taking on the values of `1`, `2`, and `4` with most of the variables being either a `1` or `2`.
+
+### YEAR BUILT
+
+```{r}
+clean_year <- nyc_estate %>% 
+  filter(!(`YEAR BUILT` == 0))
+
+ggplot(data = clean_year) + 
+  geom_histogram(aes(x = `YEAR BUILT`), bins = 100) + 
+  scale_x_continuous(limits = c(1800, 2020))
+```
+
+## Comparison with Sale Price
+
+### Sale Price versus Tax Class At Time of Sale
+
+```{r}
+ggplot(data = clean_sale) +
+  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`)), 
+                     color = `TAX CLASS AT TIME OF SALE`), bins = 100) +
+  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`, scales = 'free') +
+  labs(x = "Log of `SALE PRICE`")
+```
+
+They all have some resemblance of a normal distribution, with those at a tax class of `2` having the most normal distribution. Those in the `4` class has the most skewed data with many outliers in proportion to the rest of those in `1` and `2`.
+
+### Sale Price versus Year Built
+
+```{r}
+clean_year_sale <- clean_sale %>% 
+  filter(!(`YEAR BUILT` == 0))
+
+ggplot(data = clean_year_sale) +
+  geom_point(aes(x = log(as.numeric(`SALE PRICE`)), y = `YEAR BUILT`), alpha = .02) +
+  scale_y_continuous(limits = c(1900, 2020))
+
+cor(as.numeric(clean_year_sale$`SALE PRICE`), clean_year_sale$`YEAR BUILT`)
+```
+As the figure shows, there is very little correlation between year built and sale price. If we take the correlation value between them, we get less than 0.01 which means there is essentially no correlation. 
+
+### Tax Class at Time of Sale versus Year Built
+```{r}
+ggplot(data = clean_year) +
+  geom_histogram(aes(x = `YEAR BUILT`), bins = 50) +
+  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`) + 
+  scale_x_continuous(limits = c(1900, 2020))
+```
+
+### Number of buildings
+```{r}
+nyc_estate <- read_csv("https://bendesjardins.github.io/nyc-rolling-sales.csv")
+
+
+num_buildings <- nrow(nyc_estate)
+
+cat("The number of buildings is:", num_buildings, "\n")
+```
+
+
+### number of apartments per borough
+```{r}
+apartments_per_borough <- nyc_estate %>%
+  group_by(BOROUGH) %>%
+  summarize(Number_of_Apartments = n())
+
+print(apartments_per_borough)
+
+ggplot(apartments_per_borough, aes(x = factor(BOROUGH), y = Number_of_Apartments, fill = factor(BOROUGH))) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.7) +
+  labs(title = "Number of Apartments per Borough",
+       x = "Borough",
+       y = "Number of Apartments",
+       fill = "Borough") +
+  theme_minimal()
+ 
+
+```
+
+### buildings in same zipcodes
+
+```{r}
+buildings_per_zip <- nyc_estate %>%
+  group_by(`ZIP CODE`) %>%
+  summarize(Number_of_Buildings = n())
+
+print(buildings_per_zip)
+```
+
+
+### buildings in same tax class
+```{r}
+buildings_per_tax_class <- nyc_estate %>%
+  group_by(`TAX CLASS AT PRESENT`) %>%
+  summarize(Number_of_Buildings = n())
+
+# Create a scatter plot for the number of buildings per tax class
+ggplot(buildings_per_tax_class, aes(x = `TAX CLASS AT PRESENT`, y = Number_of_Buildings, color = `TAX CLASS AT PRESENT`)) +
+  geom_point(size = 3) +
+  labs(title = "Number of Buildings per Tax Class",
+       x = "Tax Class",
+       y = "Number of Buildings",
+       color = "Tax Class") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+ 
+### number of commercial units 
+
+```{r}
+commercial_units <- nyc_estate %>%
+  filter(`BUILDING CLASS CATEGORY` %in% c("21 OFFICE BUILDINGS"))
+
+total_commercial_units <- sum(commercial_units$`TOTAL UNITS`)
+
+
+cat("Total Commercial Units:", total_commercial_units, "\n")
+```
+
+
+### number of residential Units
+
+
+```{r}
+residential_units <- nyc_estate %>%
+  filter(`BUILDING CLASS CATEGORY` %in% c("01 ONE FAMILY DWELLINGS", "02 TWO FAMILY DWELLINGS", "10 COOPS - ELEVATOR APARTMENTS"))
+
+
+total_residential_units <- sum(residential_units$`TOTAL UNITS`)
+
+cat("Total Residential Units:", total_residential_units, "\n")
+```
+ 
+### Highest AND lowest sold Residential unit
+
+```{r}
+index_highest <- which.max(residential_units$`SALE PRICE`)
+
+index_lowest <- which.min(residential_units$`SALE PRICE`)
+
+
+highest_price_property <- residential_units[index_highest, ]
+lowest_price_property <- residential_units[index_lowest, ]
+
+cat("Residential Unit with Highest Sales Price:\n")
+print(highest_price_property)
+
+```
+```{r}
+cat("\nResidential Unit with Lowest Sales Price:\n")
+print(lowest_price_property)
+```
+
+
+
+### Highest and lowest sold Commercial unit
+
+```{r}
+commercial_units <- nyc_estate %>%
+  filter(`BUILDING CLASS CATEGORY` %in% c("21 OFFICE BUILDINGS"))
+
+
+highest_price_property_commercial <- commercial_units[which.max(commercial_units$`SALE PRICE`), ]
+
+
+lowest_price_property_commercial <- commercial_units[which.min(commercial_units$`SALE PRICE`), ]
+
+
+cat("Commercial Unit with Highest Sales Price:\n")
+print(highest_price_property_commercial)
+```
+```{r}
+cat("\nCommercial Unit with Lowest Sales Price:\n")
+print(lowest_price_property_commercial)
+```
+
+
+### scatter plot of highest and lowest sold units
+
+```{r}
+ggplot(commercial_units, aes(x = `SALE PRICE`, y = `TOTAL UNITS`)) +
+  geom_point(color = "skyblue", size = 3) +
+  geom_point(data = highest_price_property_commercial, aes(x = `SALE PRICE`, y = `TOTAL UNITS`), color = "red", size = 3) +
+  geom_point(data = lowest_price_property_commercial, aes(x = `SALE PRICE`, y = `TOTAL UNITS`), color = "green", size = 3) +
+  labs(title = "Scatter Plot for Highest and Lowest Sold Commercial Units",
+       x = "Sale Price",
+       y = "Total Units") +
+  theme_minimal()
+ 
+```
+
+ 
+### Number of buildings per Neighborhood
+
+```{r}
+buildings_per_neighborhood <- nyc_estate %>%
+  group_by(`NEIGHBORHOOD`) %>%
+  summarize(Number_of_Buildings = n())
+
+
+print(buildings_per_neighborhood)
+```
+
+
+### Number of Buildings most and lowest in a block
+```{r}
+buildings_per_block <- nyc_estate %>%
+  group_by(BLOCK) %>%
+  summarize(Number_of_Buildings = n())
+
+
+most_buildings_block <- buildings_per_block %>%
+  filter(Number_of_Buildings == max(Number_of_Buildings))
+
+
+fewest_buildings_block <- buildings_per_block %>%
+  filter(Number_of_Buildings == min(Number_of_Buildings))
+
+
+cat("Block with Most Buildings:\n")
+print(most_buildings_block)
+
+cat("Block with Fewest Buildings:\n")
+print(fewest_buildings_block)
+
+ggplot(buildings_per_block, aes(x = Number_of_Buildings)) +
+  geom_freqpoly(binwidth = 1, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Frequency Polygon of Number of Buildings per Block",
+       x = "Number of Buildings",
+       y = "Frequency") +
+  theme_minimal()
+  
+```
+
