@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./project.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./project.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
@@ -155,7 +155,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
   <li><a href="#distribution-of-key-data" id="toc-distribution-of-key-data" class="nav-link" data-scroll-target="#distribution-of-key-data"><span class="header-section-number">2.2</span> Distribution of Key Data</a></li>
   <li><a href="#comparison-with-sale-price" id="toc-comparison-with-sale-price" class="nav-link" data-scroll-target="#comparison-with-sale-price"><span class="header-section-number">2.3</span> Comparison with Sale Price</a></li>
+  <li><a href="#analysis-of-buildings" id="toc-analysis-of-buildings" class="nav-link" data-scroll-target="#analysis-of-buildings"><span class="header-section-number">2.4</span> Analysis of Buildings</a></li>
+  <li><a href="#commericial-and-residential-units" id="toc-commericial-and-residential-units" class="nav-link" data-scroll-target="#commericial-and-residential-units"><span class="header-section-number">2.5</span> Commericial and Residential Units</a></li>
   </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">3</span> Analysis</a>
+  <ul class="collapse">
+  <li><a href="#findings-regarding-sale-price" id="toc-findings-regarding-sale-price" class="nav-link" data-scroll-target="#findings-regarding-sale-price"><span class="header-section-number">3.1</span> Findings Regarding Sale Price</a></li>
+  <li><a href="#findings-regarding-number-of-buildings" id="toc-findings-regarding-number-of-buildings" class="nav-link" data-scroll-target="#findings-regarding-number-of-buildings"><span class="header-section-number">3.2</span> Findings Regarding Number of Buildings</a></li>
+  <li><a href="#findings-regarding-commercial-versus-residential-units" id="toc-findings-regarding-commercial-versus-residential-units" class="nav-link" data-scroll-target="#findings-regarding-commercial-versus-residential-units"><span class="header-section-number">3.3</span> Findings Regarding Commercial versus Residential Units</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -228,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(<span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">SALE PRICE</span><span class="st">`</span>))), <span class="at">bins =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Log of `Sale Price`"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 <p>After taking the log of <code>Sale Price</code>, we can see that there seems to be a pretty normal distrbution with a few outliers near the lower range of data.</p>
@@ -239,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nyc_estate) <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">TAX CLASS AT TIME OF SALE</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 <p><code>TAX CLASS AT TIME OF SALE</code> is a categorical variable taking on the values of <code>1</code>, <code>2</code>, and <code>4</code> with most of the variables being either a <code>1</code> or <code>2</code>.</p>
@@ -254,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">YEAR BUILT</span><span class="st">`</span>), <span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span> </span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1800</span>, <span class="dv">2020</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
@@ -270,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> <span class="st">`</span><span class="at">TAX CLASS AT TIME OF SALE</span><span class="st">`</span>, <span class="at">scales =</span> <span class="st">'free'</span>) <span class="sc">+</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Log of `SALE PRICE`"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 <p>They all have some resemblance of a normal distribution, with those at a tax class of <code>2</code> having the most normal distribution. Those in the <code>4</code> class has the most skewed data with many outliers in proportion to the rest of those in <code>1</code> and <code>2</code>.</p>
@@ -285,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(<span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">SALE PRICE</span><span class="st">`</span>)), <span class="at">y =</span> <span class="st">`</span><span class="at">YEAR BUILT</span><span class="st">`</span>), <span class="at">alpha =</span> .<span class="dv">02</span>) <span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1900</span>, <span class="dv">2020</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="864"></p>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">as.numeric</span>(clean_year_sale<span class="sc">$</span><span class="st">`</span><span class="at">SALE PRICE</span><span class="st">`</span>), clean_year_sale<span class="sc">$</span><span class="st">`</span><span class="at">YEAR BUILT</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -302,12 +311,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> <span class="st">`</span><span class="at">TAX CLASS AT TIME OF SALE</span><span class="st">`</span>) <span class="sc">+</span> </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1900</span>, <span class="dv">2020</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
-<section id="number-of-buildings" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="number-of-buildings"><span class="header-section-number">2.3.4</span> Number of buildings</h3>
+</section>
+<section id="analysis-of-buildings" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="analysis-of-buildings"><span class="header-section-number">2.4</span> Analysis of Buildings</h2>
+<section id="number-of-buildings" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="number-of-buildings"><span class="header-section-number">2.4.1</span> Number of Buildings</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nyc_estate <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bendesjardins.github.io/nyc-rolling-sales.csv"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -320,8 +332,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="number-of-apartments-per-borough" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="number-of-apartments-per-borough"><span class="header-section-number">2.3.5</span> number of apartments per borough</h3>
+<section id="number-of-apartments-per-borough" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="number-of-apartments-per-borough"><span class="header-section-number">2.4.2</span> Number of Apartments Per Borough</h3>
+<p>1 = Manhattan 2 = Bronx 3 = Brooklyn 4 = Queens 5 = Staten Island</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>apartments_per_borough <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(BOROUGH) <span class="sc">%&gt;%</span></span>
@@ -346,12 +359,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Borough"</span>) <span class="sc">+</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
-<section id="buildings-in-same-zipcodes" class="level3" data-number="2.3.6">
-<h3 data-number="2.3.6" class="anchored" data-anchor-id="buildings-in-same-zipcodes"><span class="header-section-number">2.3.6</span> buildings in same zipcodes</h3>
+<section id="buildings-in-the-same-zipcodes" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="buildings-in-the-same-zipcodes"><span class="header-section-number">2.4.3</span> Buildings in the same Zipcodes</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>buildings_per_zip <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">ZIP CODE</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
@@ -376,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="buildings-in-same-tax-class" class="level3" data-number="2.3.7">
-<h3 data-number="2.3.7" class="anchored" data-anchor-id="buildings-in-same-tax-class"><span class="header-section-number">2.3.7</span> buildings in same tax class</h3>
+<section id="buildings-in-same-tax-class" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="buildings-in-same-tax-class"><span class="header-section-number">2.4.4</span> Buildings in same Tax Class</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>buildings_per_tax_class <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">TAX CLASS AT PRESENT</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
@@ -393,12 +406,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
-<section id="number-of-commercial-units" class="level3" data-number="2.3.8">
-<h3 data-number="2.3.8" class="anchored" data-anchor-id="number-of-commercial-units"><span class="header-section-number">2.3.8</span> number of commercial units</h3>
+</section>
+<section id="commericial-and-residential-units" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="commericial-and-residential-units"><span class="header-section-number">2.5</span> Commericial and Residential Units</h2>
+<section id="number-of-commercial-units" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="number-of-commercial-units"><span class="header-section-number">2.5.1</span> Number of Commercial Units</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>commercial_units <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">BUILDING CLASS CATEGORY</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"21 OFFICE BUILDINGS"</span>))</span>
@@ -412,8 +428,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="number-of-residential-units" class="level3" data-number="2.3.9">
-<h3 data-number="2.3.9" class="anchored" data-anchor-id="number-of-residential-units"><span class="header-section-number">2.3.9</span> number of residential Units</h3>
+<section id="number-of-residential-units" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="number-of-residential-units"><span class="header-section-number">2.5.2</span> Number of Residential Units</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>residential_units <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">BUILDING CLASS CATEGORY</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"01 ONE FAMILY DWELLINGS"</span>, <span class="st">"02 TWO FAMILY DWELLINGS"</span>, <span class="st">"10 COOPS - ELEVATOR APARTMENTS"</span>))</span>
@@ -427,8 +443,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="highest-and-lowest-sold-residential-unit" class="level3" data-number="2.3.10">
-<h3 data-number="2.3.10" class="anchored" data-anchor-id="highest-and-lowest-sold-residential-unit"><span class="header-section-number">2.3.10</span> Highest AND lowest sold Residential unit</h3>
+<section id="highest-and-lowest-sold-residential-units" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="highest-and-lowest-sold-residential-units"><span class="header-section-number">2.5.3</span> Highest and Lowest sold Residential Units</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>index_highest <span class="ot">&lt;-</span> <span class="fu">which.max</span>(residential_units<span class="sc">$</span><span class="st">`</span><span class="at">SALE PRICE</span><span class="st">`</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -479,8 +495,8 @@ Residential Unit with Lowest Sales Price:</code></pre>
 </div>
 </div>
 </section>
-<section id="highest-and-lowest-sold-commercial-unit" class="level3" data-number="2.3.11">
-<h3 data-number="2.3.11" class="anchored" data-anchor-id="highest-and-lowest-sold-commercial-unit"><span class="header-section-number">2.3.11</span> Highest and lowest sold Commercial unit</h3>
+<section id="highest-and-lowest-sold-commercial-units" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="highest-and-lowest-sold-commercial-units"><span class="header-section-number">2.5.4</span> Highest and Lowest sold Commercial Units</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>commercial_units <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">BUILDING CLASS CATEGORY</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"21 OFFICE BUILDINGS"</span>))</span>
@@ -533,8 +549,8 @@ Commercial Unit with Lowest Sales Price:</code></pre>
 </div>
 </div>
 </section>
-<section id="scatter-plot-of-highest-and-lowest-sold-units" class="level3" data-number="2.3.12">
-<h3 data-number="2.3.12" class="anchored" data-anchor-id="scatter-plot-of-highest-and-lowest-sold-units"><span class="header-section-number">2.3.12</span> scatter plot of highest and lowest sold units</h3>
+<section id="scatter-plot-of-highest-and-lowest-sold-units" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="scatter-plot-of-highest-and-lowest-sold-units"><span class="header-section-number">2.5.5</span> Scatter plot of highest and lowest sold units</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(commercial_units, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">SALE PRICE</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">TOTAL UNITS</span><span class="st">`</span>)) <span class="sc">+</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"skyblue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
@@ -545,12 +561,12 @@ Commercial Unit with Lowest Sales Price:</code></pre>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Units"</span>) <span class="sc">+</span></span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
-<section id="number-of-buildings-per-neighborhood" class="level3" data-number="2.3.13">
-<h3 data-number="2.3.13" class="anchored" data-anchor-id="number-of-buildings-per-neighborhood"><span class="header-section-number">2.3.13</span> Number of buildings per Neighborhood</h3>
+<section id="number-of-buildings-per-neighborhood" class="level3" data-number="2.5.6">
+<h3 data-number="2.5.6" class="anchored" data-anchor-id="number-of-buildings-per-neighborhood"><span class="header-section-number">2.5.6</span> Number of Buildings per Neighborhood</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>buildings_per_neighborhood <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">NEIGHBORHOOD</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
@@ -576,8 +592,8 @@ Commercial Unit with Lowest Sales Price:</code></pre>
 </div>
 </div>
 </section>
-<section id="number-of-buildings-most-and-lowest-in-a-block" class="level3" data-number="2.3.14">
-<h3 data-number="2.3.14" class="anchored" data-anchor-id="number-of-buildings-most-and-lowest-in-a-block"><span class="header-section-number">2.3.14</span> Number of Buildings most and lowest in a block</h3>
+<section id="number-of-buildings-most-and-lowest-in-a-block" class="level3" data-number="2.5.7">
+<h3 data-number="2.5.7" class="anchored" data-anchor-id="number-of-buildings-most-and-lowest-in-a-block"><span class="header-section-number">2.5.7</span> Number of Buildings most and lowest in a block</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>buildings_per_block <span class="ot">&lt;-</span> nyc_estate <span class="sc">%&gt;%</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(BLOCK) <span class="sc">%&gt;%</span></span>
@@ -631,13 +647,34 @@ Commercial Unit with Lowest Sales Price:</code></pre>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
 <span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="864"></p>
+<p><img src="project--1-_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-
-
 </section>
 </section>
+</section>
+<section id="analysis" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Analysis</h1>
+<p>Utilizing the <code>NYC Rolling Sales</code> data set to study the relationships between the variables, we were able to determine predictability between all the variables. Some of the things taken into consideration was <code>SALE PRICE</code>, <code>TAX CLASS AT TIME OF SALE</code>, <code>NUMBER OF BUILDINGS</code>, <code>BOROUGH</code>, and more.</p>
+<section id="findings-regarding-sale-price" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="findings-regarding-sale-price"><span class="header-section-number">3.1</span> Findings Regarding Sale Price</h2>
+<p><code>SALE PRICE</code> had a normal distribution with some degree of outliers either at a price of 0 or something very low. This can be contributed to pieces of land being given away at a low price or other some either reason than just to be sold. <code>SALE PRICE</code> was compared primarily with <code>TAX CLASS AT TIME OF SALE</code> and <code>YEAR BUILT</code> to determine any correlations. When it came it <code>TAX CLASS AT TIME OF SALE</code>, <code>SALE PRICE</code> kept a similar normal distribution to the original data, all of it falling into the same general range. However, buildings with a tax class of <code>4</code> had the highest proportion of outliers compared to the rest of the data, as the figure in 2.3.1 shows. This implies that aside from having a higher chance of being a very low sale given that the building was in the tax class of 4, no assumptions can be made about the <code>SALE PRICE</code> with a varying tax class.</p>
+<p>Another variable tested was <code>YEAR BUILT</code> and as demonstrated by calculating the correlation coefficient and the graph in 2.3.2, there is essentially no correlation between the two variables.</p>
+</section>
+<section id="findings-regarding-number-of-buildings" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="findings-regarding-number-of-buildings"><span class="header-section-number">3.2</span> Findings Regarding Number of Buildings</h2>
+<p>Another topic assessed was how the distribution of buildings related to other variables. The first thing recognized was the distribution of buildings in comparison to which borough they were located. The most common location was in Queens (4), and the least number of apartments sold was in the Bronx. Another variable studied in relation to number of buildings was <code>TAX CLASS</code>. The most common tax classes were 1 and 2, in a range of 30000 to 40000 buildings (Out of 80000 total buildings). There were a select few in the 4 category, and some of the sub categories had anywhere from 1000 to 3000 buildings. Three was the least common tax class, as demonstrated by some of the previous graphs.</p>
+</section>
+<section id="findings-regarding-commercial-versus-residential-units" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="findings-regarding-commercial-versus-residential-units"><span class="header-section-number">3.3</span> Findings Regarding Commercial versus Residential Units</h2>
+<p>One of the last topics considered was whether or not buildings were commercial/residential units. This was done by filtering the <code>BUILDING CLASS CATEGORY</code>, where those that were listed as <code>21 OFFICE BUILDINGS</code> were classified was commercial, and those that were family dwellings/coops were marked as residential. Residential Units greatly outnumbered commercial units, with a ratio of 63776 : 2305 or about 55 : 2. Thus the findings regarding residential units have more data to back it up. Both the top ten buildings with the lowest <code>SALE PRICE</code> and highest <code>SALE PRICE</code> for both commercial and residential buildings were found to provide insight to what differences may come up. The figure in 2.5.5 showcases where these buildings land in comparison with the rest.</p>
+</section>
+</section>
+<section id="conclusion" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Conclusion</h1>
+<p>The topics discussed and analyzed only covered a small portion of what the <code>nyc-rolling-sales.csv</code> data set has to offer. It was established that <code>SALE PRICE</code> had no relationship with some of the variables such as <code>YEAR BUILT</code> and no serious predictions could be made on what the sale price of buildings could be with any of the variables we looked at. Studying the distribution of buildings with variables like <code>TAX CLASS</code> also provided little insight on prediction. The last thing assessed was commercial versus residential units, where it was established the number of residential buildings greatly outclassed the number of commercial ones. In the future, finding ways to intertwine the categories assessed and study the connections between them would continue to provide further insight on New York City real estate listings.</p>
+
+
 </section>
 
 </main> <!-- /main -->
