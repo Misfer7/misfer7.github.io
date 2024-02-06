@@ -1,0 +1,141 @@
+---
+title: "DANL 210: Data Preparation and Management"
+subtitle: Quarto Template with only Python Code
+author: 
+  - name: YOUR NAME
+  - name: YOUR COWORKER 1
+  
+date: last-modified
+
+jupyter: python3
+
+execute:
+  echo: true
+  eval: true
+  message: false
+  warning: false
+  fig-width: 9
+
+format: 
+  html:
+    toc: true
+    number-sections: true
+    code-fold: show       # https://quarto.org/docs/output-formats/html-code.html  
+    code-tools: true      # https://quarto.org/docs/reference/cells/cells-jupyter.html
+    highlight-style: atom-one # atom-one tango espresso
+---
+
+```{r}
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+# Python Basics 
+
+## Variables and Data Types
+
+In Python, variables can store data of different types without explicitly declaring the type.
+
+For example:
+
+```{python}
+integer_variable = 10
+string_variable = 'Hello'
+float_variable = 10.5
+
+float_variable
+```
+
+## Control Structures
+
+Python supports the usual logical conditions from mathematics:
+
+```{python}
+# Equals: a == b
+# Not Equals: a != b
+# Less than: a < b
+# Less than or equal to: a <= b
+# Greater than: a > b
+# Greater than or equal to: a >= b
+```
+
+These conditions can be used in several ways, most commonly in 'if statements' and loops.
+
+```{python}
+# if statement:
+if 5 > 2:
+    print('Five is greater than two!')
+```
+
+## Functions
+
+A function is a block of code which only runs when it is called.
+
+You can pass data, known as parameters, into a function.
+
+A function can return data as a result.
+
+
+```{python}
+# Defining a function:
+def my_function():
+    print('Hello from a function')
+
+# Calling a function:
+my_function()
+```
+
+## Lists and Dictionaries
+
+A list is a collection which is ordered and changeable.
+
+A dictionary is a collection which is unordered, changeable and indexed.
+
+```{python}
+# List example:
+my_list = ['apple', 'banana', 'cherry']
+
+# Dictionary example:
+my_dict = {'name': 'John', 'age': 36}
+```
+
+
+
+# Pandas Basics - Orange Juice Sales
+
+## Import Python libraries
+
+```{python}
+import pandas as pd
+```
+
+
+
+```{python}
+oj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')
+```
+
+```{python}
+#| code-fold: true
+#| code-summary: "Code!"
+
+oj
+```
+
+
+```{python}
+oj.describe()
+```
+
+
+
+### Interactive DataFrame with `itables` library
+
+In `*.ipynb` on Google Colab, we can use `itables` or just Google Colab's default to print DataFrame.
+
+```{python}
+# !pip install itables
+from itables import init_notebook_mode, show
+init_notebook_mode(all_interactive=False)
+
+show(oj)
+```

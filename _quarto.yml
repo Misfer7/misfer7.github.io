@@ -5,14 +5,18 @@ project:
 website:
   title: "YOUR NAME"
   navbar:
+    #background: "#006600"
     pinned: true
     left:
       - text: Project
         href: project.qmd
+      - text: Python Basic
+        href: basic-python-intro.ipynb
+        #href: danl-210-quarto-reticulate.qmd
       - text: Blog
         href: blog-listing.qmd
   page-footer: 
-    center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
+    center: "Powered with GitHub and Quarto<br>© Misfer Hamid, 2023"
 
 format:
   html:
