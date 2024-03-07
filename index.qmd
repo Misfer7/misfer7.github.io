@@ -2,7 +2,7 @@
 title: "Misfer Mohammed Hamid" 
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: profile.png
+  image: img/IMG_3626.jpg
   image-width: 16em
   image-shape: round # rectangle  round  rounded
   

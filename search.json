@@ -1,63 +1,63 @@
 [
   {
-    "objectID": "project (1).html",
-    "href": "project (1).html",
+    "objectID": "project.html",
+    "href": "project.html",
     "title": "DANL Project",
     "section": "",
     "text": "Introduction to the NYC Rolling Sales Dataset\nThe NYC Rolling Sales dataset provides a comprehensive overview of real estate transactions within New York City. Compiled from the city’s rolling sales data, this dataset encompasses a wide range of property sales, offering insights into the dynamic and diverse real estate market of one of the world’s most iconic metropolitan areas.\nKey Information:\nSource: NYC Department of Finance Coverage: The dataset includes information on sales transactions across various boroughs, capturing the intricacies of the city’s real estate landscape. Columns: Essential details such as property address, sale price, sale date, borough, tax class code, and other pertinent information are included. Objective: The primary objective of this dataset is to facilitate analysis and exploration of real estate trends, patterns, and market dynamics within New York City. Researchers, analysts, and enthusiasts can leverage this dataset to gain insights into property values, transaction volumes, and the distribution of sales across different tax class codes and boroughs.\nUsage: This dataset is valuable for a variety of purposes, including market research, trend analysis, and the identification of patterns that may influence property values. It provides a robust foundation for those interested in understanding the factors influencing real estate transactions in the diverse neighborhoods of New York City.\nAccessing the Data: The dataset is publicly accessible and can be obtained from the NYC Department of Finance. In this analysis, we utilize the dataset available at https://bendesjardins.github.io/nyc-rolling-sales.csv."
   },
   {
-    "objectID": "project (1).html#summary-statistics",
-    "href": "project (1).html#summary-statistics",
+    "objectID": "project.html#summary-statistics",
+    "href": "project.html#summary-statistics",
     "title": "DANL Project",
     "section": "2.1 Summary Statistics",
     "text": "2.1 Summary Statistics\n\nnyc_estate &lt;- read_csv(\"https://bendesjardins.github.io/nyc-rolling-sales.csv\")"
   },
   {
-    "objectID": "project (1).html#distribution-of-key-data",
-    "href": "project (1).html#distribution-of-key-data",
+    "objectID": "project.html#distribution-of-key-data",
+    "href": "project.html#distribution-of-key-data",
     "title": "DANL Project",
     "section": "2.2 Distribution of Key Data",
     "text": "2.2 Distribution of Key Data\n\n2.2.1 Sale Price\n\nclean_sale &lt;- nyc_estate %&gt;% \n  filter(!(`SALE PRICE` == \"-\"))\n\nggplot(data = clean_sale) +\n  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`))), bins = 200) +\n  labs(x = \"Log of `Sale Price`\")\n\n\n\n\nAfter taking the log of Sale Price, we can see that there seems to be a pretty normal distrbution with a few outliers near the lower range of data.\n\n\n2.2.2 TAX CLASS AT TIME OF SALE\n\nggplot(data = nyc_estate) +\n  geom_bar(aes(x = `TAX CLASS AT TIME OF SALE`))\n\n\n\n\nTAX CLASS AT TIME OF SALE is a categorical variable taking on the values of 1, 2, and 4 with most of the variables being either a 1 or 2.\n\n\n2.2.3 YEAR BUILT\n\nclean_year &lt;- nyc_estate %&gt;% \n  filter(!(`YEAR BUILT` == 0))\n\nggplot(data = clean_year) + \n  geom_histogram(aes(x = `YEAR BUILT`), bins = 100) + \n  scale_x_continuous(limits = c(1800, 2020))"
   },
   {
-    "objectID": "project (1).html#comparison-with-sale-price",
-    "href": "project (1).html#comparison-with-sale-price",
+    "objectID": "project.html#comparison-with-sale-price",
+    "href": "project.html#comparison-with-sale-price",
     "title": "DANL Project",
     "section": "2.3 Comparison with Sale Price",
     "text": "2.3 Comparison with Sale Price\n\n2.3.1 Sale Price versus Tax Class At Time of Sale\n\nggplot(data = clean_sale) +\n  geom_histogram(aes(x = log(as.numeric(`SALE PRICE`)), \n                     color = `TAX CLASS AT TIME OF SALE`), bins = 100) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`, scales = 'free') +\n  labs(x = \"Log of `SALE PRICE`\")\n\n\n\n\nThey all have some resemblance of a normal distribution, with those at a tax class of 2 having the most normal distribution. Those in the 4 class has the most skewed data with many outliers in proportion to the rest of those in 1 and 2.\n\n\n2.3.2 Sale Price versus Year Built\n\nclean_year_sale &lt;- clean_sale %&gt;% \n  filter(!(`YEAR BUILT` == 0))\n\nggplot(data = clean_year_sale) +\n  geom_point(aes(x = log(as.numeric(`SALE PRICE`)), y = `YEAR BUILT`), alpha = .02) +\n  scale_y_continuous(limits = c(1900, 2020))\n\n\n\ncor(as.numeric(clean_year_sale$`SALE PRICE`), clean_year_sale$`YEAR BUILT`)\n\n[1] 0.006318972\n\n\nAs the figure shows, there is very little correlation between year built and sale price. If we take the correlation value between them, we get less than 0.01 which means there is essentially no correlation.\n\n\n2.3.3 Tax Class at Time of Sale versus Year Built\n\nggplot(data = clean_year) +\n  geom_histogram(aes(x = `YEAR BUILT`), bins = 50) +\n  facet_wrap(. ~ `TAX CLASS AT TIME OF SALE`) + \n  scale_x_continuous(limits = c(1900, 2020))"
   },
   {
-    "objectID": "project (1).html#analysis-of-buildings",
-    "href": "project (1).html#analysis-of-buildings",
+    "objectID": "project.html#analysis-of-buildings",
+    "href": "project.html#analysis-of-buildings",
     "title": "DANL Project",
     "section": "2.4 Analysis of Buildings",
     "text": "2.4 Analysis of Buildings\n\n2.4.1 Number of Buildings\n\nnyc_estate &lt;- read_csv(\"https://bendesjardins.github.io/nyc-rolling-sales.csv\")\n\n\nnum_buildings &lt;- nrow(nyc_estate)\n\ncat(\"The number of buildings is:\", num_buildings, \"\\n\")\n\nThe number of buildings is: 84548 \n\n\n\n\n2.4.2 Number of Apartments Per Borough\n1 = Manhattan 2 = Bronx 3 = Brooklyn 4 = Queens 5 = Staten Island\n\napartments_per_borough &lt;- nyc_estate %&gt;%\n  group_by(BOROUGH) %&gt;%\n  summarize(Number_of_Apartments = n())\n\nprint(apartments_per_borough)\n\n# A tibble: 5 × 2\n  BOROUGH Number_of_Apartments\n    &lt;dbl&gt;                &lt;int&gt;\n1       1                18306\n2       2                 7049\n3       3                24047\n4       4                26736\n5       5                 8410\n\nggplot(apartments_per_borough, aes(x = factor(BOROUGH), y = Number_of_Apartments, fill = factor(BOROUGH))) +\n  geom_bar(stat = \"identity\", color = \"black\", alpha = 0.7) +\n  labs(title = \"Number of Apartments per Borough\",\n       x = \"Borough\",\n       y = \"Number of Apartments\",\n       fill = \"Borough\") +\n  theme_minimal()\n\n\n\n\n\n\n2.4.3 Buildings in the same Zipcodes\n\nbuildings_per_zip &lt;- nyc_estate %&gt;%\n  group_by(`ZIP CODE`) %&gt;%\n  summarize(Number_of_Buildings = n())\n\nprint(buildings_per_zip)\n\n# A tibble: 186 × 2\n   `ZIP CODE` Number_of_Buildings\n        &lt;dbl&gt;               &lt;int&gt;\n 1          0                 982\n 2      10001                 204\n 3      10002                 328\n 4      10003                 812\n 5      10004                  95\n 6      10005                 199\n 7      10006                 184\n 8      10007                 313\n 9      10009                 244\n10      10010                 459\n# ℹ 176 more rows\n\n\n\n\n2.4.4 Buildings in same Tax Class\n\nbuildings_per_tax_class &lt;- nyc_estate %&gt;%\n  group_by(`TAX CLASS AT PRESENT`) %&gt;%\n  summarize(Number_of_Buildings = n())\n\n# Create a scatter plot for the number of buildings per tax class\nggplot(buildings_per_tax_class, aes(x = `TAX CLASS AT PRESENT`, y = Number_of_Buildings, color = `TAX CLASS AT PRESENT`)) +\n  geom_point(size = 3) +\n  labs(title = \"Number of Buildings per Tax Class\",\n       x = \"Tax Class\",\n       y = \"Number of Buildings\",\n       color = \"Tax Class\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
   },
   {
-    "objectID": "project (1).html#commericial-and-residential-units",
-    "href": "project (1).html#commericial-and-residential-units",
+    "objectID": "project.html#commericial-and-residential-units",
+    "href": "project.html#commericial-and-residential-units",
     "title": "DANL Project",
     "section": "2.5 Commericial and Residential Units",
     "text": "2.5 Commericial and Residential Units\n\n2.5.1 Number of Commercial Units\n\ncommercial_units &lt;- nyc_estate %&gt;%\n  filter(`BUILDING CLASS CATEGORY` %in% c(\"21 OFFICE BUILDINGS\"))\n\ntotal_commercial_units &lt;- sum(commercial_units$`TOTAL UNITS`)\n\n\ncat(\"Total Commercial Units:\", total_commercial_units, \"\\n\")\n\nTotal Commercial Units: 2305 \n\n\n\n\n2.5.2 Number of Residential Units\n\nresidential_units &lt;- nyc_estate %&gt;%\n  filter(`BUILDING CLASS CATEGORY` %in% c(\"01 ONE FAMILY DWELLINGS\", \"02 TWO FAMILY DWELLINGS\", \"10 COOPS - ELEVATOR APARTMENTS\"))\n\n\ntotal_residential_units &lt;- sum(residential_units$`TOTAL UNITS`)\n\ncat(\"Total Residential Units:\", total_residential_units, \"\\n\")\n\nTotal Residential Units: 63776 \n\n\n\n\n2.5.3 Highest and Lowest sold Residential Units\n\nindex_highest &lt;- which.max(residential_units$`SALE PRICE`)\n\nindex_lowest &lt;- which.min(residential_units$`SALE PRICE`)\n\n\nhighest_price_property &lt;- residential_units[index_highest, ]\nlowest_price_property &lt;- residential_units[index_lowest, ]\n\ncat(\"Residential Unit with Highest Sales Price:\\n\")\n\nResidential Unit with Highest Sales Price:\n\nprint(highest_price_property)\n\n# A tibble: 1 × 22\n   ...1 BOROUGH NEIGHBORHOOD BUILDING CLASS CATEG…¹ `TAX CLASS AT PRESENT` BLOCK\n  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;                  &lt;chr&gt;                  &lt;dbl&gt;\n1 11983       1 UPPER EAST … 10 COOPS - ELEVATOR A… 2                       1392\n# ℹ abbreviated name: ¹​`BUILDING CLASS CATEGORY`\n# ℹ 16 more variables: LOT &lt;dbl&gt;, `EASE-MENT` &lt;lgl&gt;,\n#   `BUILDING CLASS AT PRESENT` &lt;chr&gt;, ADDRESS &lt;chr&gt;, `APARTMENT NUMBER` &lt;chr&gt;,\n#   `ZIP CODE` &lt;dbl&gt;, `RESIDENTIAL UNITS` &lt;dbl&gt;, `COMMERCIAL UNITS` &lt;dbl&gt;,\n#   `TOTAL UNITS` &lt;dbl&gt;, `LAND SQUARE FEET` &lt;chr&gt;, `GROSS SQUARE FEET` &lt;chr&gt;,\n#   `YEAR BUILT` &lt;dbl&gt;, `TAX CLASS AT TIME OF SALE` &lt;dbl&gt;,\n#   `BUILDING CLASS AT TIME OF SALE` &lt;chr&gt;, `SALE PRICE` &lt;chr&gt;, …\n\n\n\ncat(\"\\nResidential Unit with Lowest Sales Price:\\n\")\n\n\nResidential Unit with Lowest Sales Price:\n\nprint(lowest_price_property)\n\n# A tibble: 1 × 22\n   ...1 BOROUGH NEIGHBORHOOD BUILDING CLASS CATEG…¹ `TAX CLASS AT PRESENT` BLOCK\n  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;                  &lt;chr&gt;                  &lt;dbl&gt;\n1     9       2 BATHGATE     01 ONE FAMILY DWELLIN… 1                       3048\n# ℹ abbreviated name: ¹​`BUILDING CLASS CATEGORY`\n# ℹ 16 more variables: LOT &lt;dbl&gt;, `EASE-MENT` &lt;lgl&gt;,\n#   `BUILDING CLASS AT PRESENT` &lt;chr&gt;, ADDRESS &lt;chr&gt;, `APARTMENT NUMBER` &lt;chr&gt;,\n#   `ZIP CODE` &lt;dbl&gt;, `RESIDENTIAL UNITS` &lt;dbl&gt;, `COMMERCIAL UNITS` &lt;dbl&gt;,\n#   `TOTAL UNITS` &lt;dbl&gt;, `LAND SQUARE FEET` &lt;chr&gt;, `GROSS SQUARE FEET` &lt;chr&gt;,\n#   `YEAR BUILT` &lt;dbl&gt;, `TAX CLASS AT TIME OF SALE` &lt;dbl&gt;,\n#   `BUILDING CLASS AT TIME OF SALE` &lt;chr&gt;, `SALE PRICE` &lt;chr&gt;, …\n\n\n\n\n2.5.4 Highest and Lowest sold Commercial Units\n\ncommercial_units &lt;- nyc_estate %&gt;%\n  filter(`BUILDING CLASS CATEGORY` %in% c(\"21 OFFICE BUILDINGS\"))\n\n\nhighest_price_property_commercial &lt;- commercial_units[which.max(commercial_units$`SALE PRICE`), ]\n\n\nlowest_price_property_commercial &lt;- commercial_units[which.min(commercial_units$`SALE PRICE`), ]\n\n\ncat(\"Commercial Unit with Highest Sales Price:\\n\")\n\nCommercial Unit with Highest Sales Price:\n\nprint(highest_price_property_commercial)\n\n# A tibble: 1 × 22\n   ...1 BOROUGH NEIGHBORHOOD BUILDING CLASS CATEG…¹ `TAX CLASS AT PRESENT` BLOCK\n  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;                  &lt;chr&gt;                  &lt;dbl&gt;\n1  7451       1 MIDTOWN CBD  21 OFFICE BUILDINGS    4                       1301\n# ℹ abbreviated name: ¹​`BUILDING CLASS CATEGORY`\n# ℹ 16 more variables: LOT &lt;dbl&gt;, `EASE-MENT` &lt;lgl&gt;,\n#   `BUILDING CLASS AT PRESENT` &lt;chr&gt;, ADDRESS &lt;chr&gt;, `APARTMENT NUMBER` &lt;chr&gt;,\n#   `ZIP CODE` &lt;dbl&gt;, `RESIDENTIAL UNITS` &lt;dbl&gt;, `COMMERCIAL UNITS` &lt;dbl&gt;,\n#   `TOTAL UNITS` &lt;dbl&gt;, `LAND SQUARE FEET` &lt;chr&gt;, `GROSS SQUARE FEET` &lt;chr&gt;,\n#   `YEAR BUILT` &lt;dbl&gt;, `TAX CLASS AT TIME OF SALE` &lt;dbl&gt;,\n#   `BUILDING CLASS AT TIME OF SALE` &lt;chr&gt;, `SALE PRICE` &lt;chr&gt;, …\n\n\n\ncat(\"\\nCommercial Unit with Lowest Sales Price:\\n\")\n\n\nCommercial Unit with Lowest Sales Price:\n\nprint(lowest_price_property_commercial)\n\n# A tibble: 1 × 22\n   ...1 BOROUGH NEIGHBORHOOD BUILDING CLASS CATEG…¹ `TAX CLASS AT PRESENT` BLOCK\n  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;                  &lt;chr&gt;                  &lt;dbl&gt;\n1   695       2 BEDFORD PAR… 21 OFFICE BUILDINGS    4                       3309\n# ℹ abbreviated name: ¹​`BUILDING CLASS CATEGORY`\n# ℹ 16 more variables: LOT &lt;dbl&gt;, `EASE-MENT` &lt;lgl&gt;,\n#   `BUILDING CLASS AT PRESENT` &lt;chr&gt;, ADDRESS &lt;chr&gt;, `APARTMENT NUMBER` &lt;chr&gt;,\n#   `ZIP CODE` &lt;dbl&gt;, `RESIDENTIAL UNITS` &lt;dbl&gt;, `COMMERCIAL UNITS` &lt;dbl&gt;,\n#   `TOTAL UNITS` &lt;dbl&gt;, `LAND SQUARE FEET` &lt;chr&gt;, `GROSS SQUARE FEET` &lt;chr&gt;,\n#   `YEAR BUILT` &lt;dbl&gt;, `TAX CLASS AT TIME OF SALE` &lt;dbl&gt;,\n#   `BUILDING CLASS AT TIME OF SALE` &lt;chr&gt;, `SALE PRICE` &lt;chr&gt;, …\n\n\n\n\n2.5.5 Scatter plot of highest and lowest sold units\n\nggplot(commercial_units, aes(x = `SALE PRICE`, y = `TOTAL UNITS`)) +\n  geom_point(color = \"skyblue\", size = 3) +\n  geom_point(data = highest_price_property_commercial, aes(x = `SALE PRICE`, y = `TOTAL UNITS`), color = \"red\", size = 3) +\n  geom_point(data = lowest_price_property_commercial, aes(x = `SALE PRICE`, y = `TOTAL UNITS`), color = \"green\", size = 3) +\n  labs(title = \"Scatter Plot for Highest and Lowest Sold Commercial Units\",\n       x = \"Sale Price\",\n       y = \"Total Units\") +\n  theme_minimal()\n\n\n\n\n\n\n2.5.6 Number of Buildings per Neighborhood\n\nbuildings_per_neighborhood &lt;- nyc_estate %&gt;%\n  group_by(`NEIGHBORHOOD`) %&gt;%\n  summarize(Number_of_Buildings = n())\n\n\nprint(buildings_per_neighborhood)\n\n# A tibble: 254 × 2\n   NEIGHBORHOOD         Number_of_Buildings\n   &lt;chr&gt;                              &lt;int&gt;\n 1 AIRPORT LA GUARDIA                     8\n 2 ALPHABET CITY                        204\n 3 ANNADALE                             198\n 4 ARDEN HEIGHTS                        278\n 5 ARROCHAR                              45\n 6 ARROCHAR-SHORE ACRES                  33\n 7 ARVERNE                              197\n 8 ASTORIA                             1216\n 9 BATH BEACH                           272\n10 BATHGATE                              68\n# ℹ 244 more rows\n\n\n\n\n2.5.7 Number of Buildings most and lowest in a block\n\nbuildings_per_block &lt;- nyc_estate %&gt;%\n  group_by(BLOCK) %&gt;%\n  summarize(Number_of_Buildings = n())\n\n\nmost_buildings_block &lt;- buildings_per_block %&gt;%\n  filter(Number_of_Buildings == max(Number_of_Buildings))\n\n\nfewest_buildings_block &lt;- buildings_per_block %&gt;%\n  filter(Number_of_Buildings == min(Number_of_Buildings))\n\n\ncat(\"Block with Most Buildings:\\n\")\n\nBlock with Most Buildings:\n\nprint(most_buildings_block)\n\n# A tibble: 1 × 2\n  BLOCK Number_of_Buildings\n  &lt;dbl&gt;               &lt;int&gt;\n1  5066                 404\n\ncat(\"Block with Fewest Buildings:\\n\")\n\nBlock with Fewest Buildings:\n\nprint(fewest_buildings_block)\n\n# A tibble: 1,983 × 2\n   BLOCK Number_of_Buildings\n   &lt;dbl&gt;               &lt;int&gt;\n 1     5                   1\n 2    19                   1\n 3    22                   1\n 4    48                   1\n 5    71                   1\n 6    83                   1\n 7    88                   1\n 8   112                   1\n 9   113                   1\n10   126                   1\n# ℹ 1,973 more rows\n\nggplot(buildings_per_block, aes(x = Number_of_Buildings)) +\n  geom_freqpoly(binwidth = 1, fill = \"skyblue\", color = \"black\", alpha = 0.7) +\n  labs(title = \"Frequency Polygon of Number of Buildings per Block\",\n       x = \"Number of Buildings\",\n       y = \"Frequency\") +\n  theme_minimal()"
   },
   {
-    "objectID": "project (1).html#findings-regarding-sale-price",
-    "href": "project (1).html#findings-regarding-sale-price",
+    "objectID": "project.html#findings-regarding-sale-price",
+    "href": "project.html#findings-regarding-sale-price",
     "title": "DANL Project",
     "section": "3.1 Findings Regarding Sale Price",
     "text": "3.1 Findings Regarding Sale Price\nSALE PRICE had a normal distribution with some degree of outliers either at a price of 0 or something very low. This can be contributed to pieces of land being given away at a low price or other some either reason than just to be sold. SALE PRICE was compared primarily with TAX CLASS AT TIME OF SALE and YEAR BUILT to determine any correlations. When it came it TAX CLASS AT TIME OF SALE, SALE PRICE kept a similar normal distribution to the original data, all of it falling into the same general range. However, buildings with a tax class of 4 had the highest proportion of outliers compared to the rest of the data, as the figure in 2.3.1 shows. This implies that aside from having a higher chance of being a very low sale given that the building was in the tax class of 4, no assumptions can be made about the SALE PRICE with a varying tax class.\nAnother variable tested was YEAR BUILT and as demonstrated by calculating the correlation coefficient and the graph in 2.3.2, there is essentially no correlation between the two variables."
   },
   {
-    "objectID": "project (1).html#findings-regarding-number-of-buildings",
-    "href": "project (1).html#findings-regarding-number-of-buildings",
+    "objectID": "project.html#findings-regarding-number-of-buildings",
+    "href": "project.html#findings-regarding-number-of-buildings",
     "title": "DANL Project",
     "section": "3.2 Findings Regarding Number of Buildings",
     "text": "3.2 Findings Regarding Number of Buildings\nAnother topic assessed was how the distribution of buildings related to other variables. The first thing recognized was the distribution of buildings in comparison to which borough they were located. The most common location was in Queens (4), and the least number of apartments sold was in the Bronx. Another variable studied in relation to number of buildings was TAX CLASS. The most common tax classes were 1 and 2, in a range of 30000 to 40000 buildings (Out of 80000 total buildings). There were a select few in the 4 category, and some of the sub categories had anywhere from 1000 to 3000 buildings. Three was the least common tax class, as demonstrated by some of the previous graphs."
   },
   {
-    "objectID": "project (1).html#findings-regarding-commercial-versus-residential-units",
-    "href": "project (1).html#findings-regarding-commercial-versus-residential-units",
+    "objectID": "project.html#findings-regarding-commercial-versus-residential-units",
+    "href": "project.html#findings-regarding-commercial-versus-residential-units",
     "title": "DANL Project",
     "section": "3.3 Findings Regarding Commercial versus Residential Units",
     "text": "3.3 Findings Regarding Commercial versus Residential Units\nOne of the last topics considered was whether or not buildings were commercial/residential units. This was done by filtering the BUILDING CLASS CATEGORY, where those that were listed as 21 OFFICE BUILDINGS were classified was commercial, and those that were family dwellings/coops were marked as residential. Residential Units greatly outnumbered commercial units, with a ratio of 63776 : 2305 or about 55 : 2. Thus the findings regarding residential units have more data to back it up. Both the top ten buildings with the lowest SALE PRICE and highest SALE PRICE for both commercial and residential buildings were found to provide insight to what differences may come up. The figure in 2.5.5 showcases where these buildings land in comparison with the rest."
@@ -103,6 +103,48 @@
     "title": "Misfer Mohammed Hamid",
     "section": "Experience",
     "text": "Experience\nMCC | Student Aid Intern | Feb 2022 - Dec 2022"
+  },
+  {
+    "objectID": "basic-python-intro.html",
+    "href": "basic-python-intro.html",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#what-is-python",
+    "href": "basic-python-intro.html#what-is-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#variables-and-data-types",
+    "href": "basic-python-intro.html#variables-and-data-types",
+    "title": "Introduction to Python",
+    "section": "Variables and Data Types",
+    "text": "Variables and Data Types\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n10.5"
+  },
+  {
+    "objectID": "basic-python-intro.html#control-structures",
+    "href": "basic-python-intro.html#control-structures",
+    "title": "Introduction to Python",
+    "section": "Control Structures",
+    "text": "Control Structures\nPython supports the usual logical conditions from mathematics:\n\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#functions",
+    "href": "basic-python-intro.html#functions",
+    "title": "Introduction to Python",
+    "section": "Functions",
+    "text": "Functions\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
+  },
+  {
+    "objectID": "basic-python-intro.html#lists-and-dictionaries",
+    "href": "basic-python-intro.html#lists-and-dictionaries",
+    "title": "Introduction to Python",
+    "section": "Lists and Dictionaries",
+    "text": "Lists and Dictionaries\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
   },
   {
     "objectID": "blog-listing.html",

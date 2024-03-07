@@ -3,7 +3,7 @@ project:
   output-dir: "."
 
 website:
-  title: "YOUR NAME"
+  title: "Misfer"
   navbar:
     #background: "#006600"
     pinned: true
@@ -12,7 +12,6 @@ website:
         href: project.qmd
       - text: Python Basic
         href: basic-python-intro.ipynb
-        #href: danl-210-quarto-reticulate.qmd
       - text: Blog
         href: blog-listing.qmd
   page-footer: 
