@@ -84,25 +84,18 @@
     "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Misfer Mohammed Hamid",
+    "objectID": "posts/hw2/Spotify_hw2.html",
+    "href": "posts/hw2/Spotify_hw2.html",
+    "title": "Spotify",
     "section": "",
-    "text": "Misfer Mohammed Hamid majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Misfer enjoys spending time playing soccer."
+    "text": "import pandas as pd\n\n# Read the Spotify DataFrame from the given URL\nspotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')\n\n# Display the first few rows of the DataFrame\nspotify.head()\n\n\n  \n    \n\n\n\n\n\n\npid\nplaylist_name\npos\nartist_name\ntrack_name\nduration_ms\nalbum_name\n\n\n\n\n0\n0\nThrowbacks\n0\nMissy Elliott\nLose Control (feat. Ciara & Fat Man Scoop)\n226863\nThe Cookbook\n\n\n1\n0\nThrowbacks\n1\nBritney Spears\nToxic\n198800\nIn The Zone\n\n\n2\n0\nThrowbacks\n2\nBeyoncé\nCrazy In Love\n235933\nDangerously In Love (Alben für die Ewigkeit)\n\n\n3\n0\nThrowbacks\n3\nJustin Timberlake\nRock Your Body\n267266\nJustified\n\n\n4\n0\nThrowbacks\n4\nShaggy\nIt Wasn't Me\n227600\nHot Shot\n\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\n# Count the number of unique artists in the DataFrame\nunique_artists_count = spotify['artist_name'].nunique()\nprint(f\"Number of unique artists: {unique_artists_count}\")\n\n# Sort the DataFrame by the number of tracks for each artist in descending order\nartist_track_counts = spotify['artist_name'].value_counts()\nsorted_artist_track_counts = artist_track_counts.sort_values(ascending=False)\nprint(\"\\nTop 10 artists with the most tracks:\")\nprint(sorted_artist_track_counts.head(10))\n\n# Indexing: Display information about Drake\ndrake_info = spotify[spotify['artist_name'] == 'Drake'].head(1)\nprint(f\"\\nInformation about Drake:\")\nprint(drake_info)\n\n# Filtering: Create a new DataFrame for tracks by Drake\ndrake_tracks = spotify[spotify['artist_name'] == 'Drake']\n\n# Display the first few rows of the new DataFrame\nprint(\"\\nTracks by Drake:\")\nprint(drake_tracks.head())\n\nNumber of unique artists: 18866\n\nTop 10 artists with the most tracks:\nDrake               2715\nKanye West          1065\nKendrick Lamar      1035\nRihanna              915\nThe Weeknd           913\nFuture               784\nEminem               760\nLil Uzi Vert         728\nEd Sheeran           719\nThe Chainsmokers     642\nName: artist_name, dtype: int64\n\nInformation about Drake:\n     pid playlist_name  pos artist_name track_name  duration_ms album_name\n522   10          abby    8       Drake   Portland       236614  More Life\n\nTracks by Drake:\n     pid playlist_name  pos artist_name            track_name  duration_ms  \\\n522   10          abby    8       Drake              Portland       236614   \n544   10          abby   30       Drake                Preach       236973   \n570   10          abby   56       Drake             Headlines       235986   \n638   11          VIBE   52       Drake     Houstatlantavegas       290426   \n639   11          VIBE   53       Drake  Runnin Away For Good       292666   \n\n                               album_name  \n522                             More Life  \n544  If You're Reading This It's Too Late  \n570                             Take Care  \n638                           So Far Gone  \n639                          The Drake LP"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Misfer Mohammed Hamid",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Jan 2021 - Dec 2025"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Misfer Mohammed Hamid",
-    "section": "Experience",
-    "text": "Experience\nMCC | Student Aid Intern | Feb 2022 - Dec 2022"
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Insightful Analytics",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nMar 8, 2024\n\n\nMisfer\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "basic-python-intro.html",
@@ -147,11 +140,25 @@
     "text": "Lists and Dictionaries\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
   },
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Insightful Analytics",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Misfer Mohammed Hamid",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Misfer Mohammed Hamid majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Misfer enjoys spending time playing soccer."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Misfer Mohammed Hamid",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Jan 2021 - Dec 2025"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Misfer Mohammed Hamid",
+    "section": "Experience",
+    "text": "Experience\nMCC | Student Aid Intern | Feb 2022 - Dec 2022"
   },
   {
     "objectID": "posts/post-with-code/index.html",

@@ -10,6 +10,4 @@ listing:
   sort-ui: true
   filter-ui: true
   fields: [image, date, title, author, reading-time]
-
-page-layout: full
 ---
