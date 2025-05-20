@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your Name">
 <meta name="dcterms.date" content="2023-10-30">
 
-<title>Misfer - Starwars</title>
+<title>Starwars – Misfer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -70,19 +70,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2fa0555fe88427c29efa1b60aaf9e62d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e7b9b3dbd114c66b233ded7072392.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-72aaf87dae9e70b0aa03719c05e7256e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-28f772f46e247e7dab87bb265ec5ec48.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,14 +97,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -107,37 +115,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Misfer</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../project.html" rel="" target="">
- <span class="menu-text">Project</span></a>
+    <a class="nav-link" href="../../project.html"> 
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../basic-python-intro.html" rel="" target="">
- <span class="menu-text">Python Basic</span></a>
+    <a class="nav-link" href="../../basic-python-intro.html"> 
+<span class="menu-text">Python Basic</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-listing.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../blog-listing.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -194,13 +202,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <p>Let’s analyze the <code>starwars</code> data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/starwars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">paged_table</span>(starwars) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["films"],"name":[1],"type":["chr"],"align":["left"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["species"],"name":[3],"type":["chr"],"align":["left"]},{"label":["height"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["mass"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["hair_color"],"name":[6],"type":["chr"],"align":["left"]},{"label":["skin_color"],"name":[7],"type":["chr"],"align":["left"]},{"label":["eye_color"],"name":[8],"type":["chr"],"align":["left"]},{"label":["birth_year"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["sex"],"name":[10],"type":["chr"],"align":["left"]},{"label":["gender"],"name":[11],"type":["chr"],"align":["left"]},{"label":["homeworld"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"The Empire Strikes Back","2":"Luke Skywalker","3":"Human","4":"172","5":"77.0","6":"blond","7":"fair","8":"blue","9":"19.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Luke Skywalker","3":"Human","4":"172","5":"77.0","6":"blond","7":"fair","8":"blue","9":"19.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"Return of the Jedi","2":"Luke Skywalker","3":"Human","4":"172","5":"77.0","6":"blond","7":"fair","8":"blue","9":"19.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"A New Hope","2":"Luke Skywalker","3":"Human","4":"172","5":"77.0","6":"blond","7":"fair","8":"blue","9":"19.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"The Force Awakens","2":"Luke Skywalker","3":"Human","4":"172","5":"77.0","6":"blond","7":"fair","8":"blue","9":"19.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"The Empire Strikes Back","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"Attack of the Clones","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"The Phantom Menace","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"Return of the Jedi","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"A New Hope","2":"C-3PO","3":"Droid","4":"167","5":"75.0","6":"NA","7":"gold","8":"yellow","9":"112.0","10":"none","11":"masculine","12":"Tatooine"},{"1":"The Empire Strikes Back","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"Attack of the Clones","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"Revenge of the Sith","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"Return of the Jedi","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"A New Hope","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"The Force Awakens","2":"R2-D2","3":"Droid","4":"96","5":"32.0","6":"NA","7":"white, blue","8":"red","9":"33.0","10":"none","11":"masculine","12":"Naboo"},{"1":"The Empire Strikes Back","2":"Darth Vader","3":"Human","4":"202","5":"136.0","6":"none","7":"white","8":"yellow","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Darth Vader","3":"Human","4":"202","5":"136.0","6":"none","7":"white","8":"yellow","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"Return of the Jedi","2":"Darth Vader","3":"Human","4":"202","5":"136.0","6":"none","7":"white","8":"yellow","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"A New Hope","2":"Darth Vader","3":"Human","4":"202","5":"136.0","6":"none","7":"white","8":"yellow","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"The Empire Strikes Back","2":"Leia Organa","3":"Human","4":"150","5":"49.0","6":"brown","7":"light","8":"brown","9":"19.0","10":"female","11":"feminine","12":"Alderaan"},{"1":"Revenge of the Sith","2":"Leia Organa","3":"Human","4":"150","5":"49.0","6":"brown","7":"light","8":"brown","9":"19.0","10":"female","11":"feminine","12":"Alderaan"},{"1":"Return of the Jedi","2":"Leia Organa","3":"Human","4":"150","5":"49.0","6":"brown","7":"light","8":"brown","9":"19.0","10":"female","11":"feminine","12":"Alderaan"},{"1":"A New Hope","2":"Leia Organa","3":"Human","4":"150","5":"49.0","6":"brown","7":"light","8":"brown","9":"19.0","10":"female","11":"feminine","12":"Alderaan"},{"1":"The Force Awakens","2":"Leia Organa","3":"Human","4":"150","5":"49.0","6":"brown","7":"light","8":"brown","9":"19.0","10":"female","11":"feminine","12":"Alderaan"},{"1":"Attack of the Clones","2":"Owen Lars","3":"Human","4":"178","5":"120.0","6":"brown, grey","7":"light","8":"blue","9":"52.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Owen Lars","3":"Human","4":"178","5":"120.0","6":"brown, grey","7":"light","8":"blue","9":"52.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"A New Hope","2":"Owen Lars","3":"Human","4":"178","5":"120.0","6":"brown, grey","7":"light","8":"blue","9":"52.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"Attack of the Clones","2":"Beru Whitesun lars","3":"Human","4":"165","5":"75.0","6":"brown","7":"light","8":"blue","9":"47.0","10":"female","11":"feminine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Beru Whitesun lars","3":"Human","4":"165","5":"75.0","6":"brown","7":"light","8":"blue","9":"47.0","10":"female","11":"feminine","12":"Tatooine"},{"1":"A New Hope","2":"Beru Whitesun lars","3":"Human","4":"165","5":"75.0","6":"brown","7":"light","8":"blue","9":"47.0","10":"female","11":"feminine","12":"Tatooine"},{"1":"A New Hope","2":"R5-D4","3":"Droid","4":"97","5":"32.0","6":"NA","7":"white, red","8":"red","9":"NA","10":"none","11":"masculine","12":"Tatooine"},{"1":"A New Hope","2":"Biggs Darklighter","3":"Human","4":"183","5":"84.0","6":"black","7":"light","8":"brown","9":"24.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"The Empire Strikes Back","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"Attack of the Clones","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"The Phantom Menace","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"Revenge of the Sith","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"Return of the Jedi","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"A New Hope","2":"Obi-Wan Kenobi","3":"Human","4":"182","5":"77.0","6":"auburn, white","7":"fair","8":"blue-gray","9":"57.0","10":"male","11":"masculine","12":"Stewjon"},{"1":"Attack of the Clones","2":"Anakin Skywalker","3":"Human","4":"188","5":"84.0","6":"blond","7":"fair","8":"blue","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"The Phantom Menace","2":"Anakin Skywalker","3":"Human","4":"188","5":"84.0","6":"blond","7":"fair","8":"blue","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Anakin Skywalker","3":"Human","4":"188","5":"84.0","6":"blond","7":"fair","8":"blue","9":"41.9","10":"male","11":"masculine","12":"Tatooine"},{"1":"Revenge of the Sith","2":"Wilhuff Tarkin","3":"Human","4":"180","5":"NA","6":"auburn, grey","7":"fair","8":"blue","9":"64.0","10":"male","11":"masculine","12":"Eriadu"},{"1":"A New Hope","2":"Wilhuff Tarkin","3":"Human","4":"180","5":"NA","6":"auburn, grey","7":"fair","8":"blue","9":"64.0","10":"male","11":"masculine","12":"Eriadu"},{"1":"The Empire Strikes Back","2":"Chewbacca","3":"Wookiee","4":"228","5":"112.0","6":"brown","7":"unknown","8":"blue","9":"200.0","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"Revenge of the Sith","2":"Chewbacca","3":"Wookiee","4":"228","5":"112.0","6":"brown","7":"unknown","8":"blue","9":"200.0","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"Return of the Jedi","2":"Chewbacca","3":"Wookiee","4":"228","5":"112.0","6":"brown","7":"unknown","8":"blue","9":"200.0","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"A New Hope","2":"Chewbacca","3":"Wookiee","4":"228","5":"112.0","6":"brown","7":"unknown","8":"blue","9":"200.0","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"The Force Awakens","2":"Chewbacca","3":"Wookiee","4":"228","5":"112.0","6":"brown","7":"unknown","8":"blue","9":"200.0","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"The Empire Strikes Back","2":"Han Solo","3":"Human","4":"180","5":"80.0","6":"brown","7":"fair","8":"brown","9":"29.0","10":"male","11":"masculine","12":"Corellia"},{"1":"Return of the Jedi","2":"Han Solo","3":"Human","4":"180","5":"80.0","6":"brown","7":"fair","8":"brown","9":"29.0","10":"male","11":"masculine","12":"Corellia"},{"1":"A New Hope","2":"Han Solo","3":"Human","4":"180","5":"80.0","6":"brown","7":"fair","8":"brown","9":"29.0","10":"male","11":"masculine","12":"Corellia"},{"1":"The Force Awakens","2":"Han Solo","3":"Human","4":"180","5":"80.0","6":"brown","7":"fair","8":"brown","9":"29.0","10":"male","11":"masculine","12":"Corellia"},{"1":"A New Hope","2":"Greedo","3":"Rodian","4":"173","5":"74.0","6":"NA","7":"green","8":"black","9":"44.0","10":"male","11":"masculine","12":"Rodia"},{"1":"The Phantom Menace","2":"Jabba Desilijic Tiure","3":"Hutt","4":"175","5":"1358.0","6":"NA","7":"green-tan, brown","8":"orange","9":"600.0","10":"hermaphroditic","11":"masculine","12":"Nal Hutta"},{"1":"Return of the Jedi","2":"Jabba Desilijic Tiure","3":"Hutt","4":"175","5":"1358.0","6":"NA","7":"green-tan, brown","8":"orange","9":"600.0","10":"hermaphroditic","11":"masculine","12":"Nal Hutta"},{"1":"A New Hope","2":"Jabba Desilijic Tiure","3":"Hutt","4":"175","5":"1358.0","6":"NA","7":"green-tan, brown","8":"orange","9":"600.0","10":"hermaphroditic","11":"masculine","12":"Nal Hutta"},{"1":"The Empire Strikes Back","2":"Wedge Antilles","3":"Human","4":"170","5":"77.0","6":"brown","7":"fair","8":"hazel","9":"21.0","10":"male","11":"masculine","12":"Corellia"},{"1":"Return of the Jedi","2":"Wedge Antilles","3":"Human","4":"170","5":"77.0","6":"brown","7":"fair","8":"hazel","9":"21.0","10":"male","11":"masculine","12":"Corellia"},{"1":"A New Hope","2":"Wedge Antilles","3":"Human","4":"170","5":"77.0","6":"brown","7":"fair","8":"hazel","9":"21.0","10":"male","11":"masculine","12":"Corellia"},{"1":"A New Hope","2":"Jek Tono Porkins","3":"Human","4":"180","5":"110.0","6":"brown","7":"fair","8":"blue","9":"NA","10":"male","11":"masculine","12":"Bestine IV"},{"1":"The Empire Strikes Back","2":"Yoda","3":"Yoda's species","4":"66","5":"17.0","6":"white","7":"green","8":"brown","9":"896.0","10":"male","11":"masculine","12":"NA"},{"1":"Attack of the Clones","2":"Yoda","3":"Yoda's species","4":"66","5":"17.0","6":"white","7":"green","8":"brown","9":"896.0","10":"male","11":"masculine","12":"NA"},{"1":"The Phantom Menace","2":"Yoda","3":"Yoda's species","4":"66","5":"17.0","6":"white","7":"green","8":"brown","9":"896.0","10":"male","11":"masculine","12":"NA"},{"1":"Revenge of the Sith","2":"Yoda","3":"Yoda's species","4":"66","5":"17.0","6":"white","7":"green","8":"brown","9":"896.0","10":"male","11":"masculine","12":"NA"},{"1":"Return of the Jedi","2":"Yoda","3":"Yoda's species","4":"66","5":"17.0","6":"white","7":"green","8":"brown","9":"896.0","10":"male","11":"masculine","12":"NA"},{"1":"The Empire Strikes Back","2":"Palpatine","3":"Human","4":"170","5":"75.0","6":"grey","7":"pale","8":"yellow","9":"82.0","10":"male","11":"masculine","12":"Naboo"},{"1":"Attack of the Clones","2":"Palpatine","3":"Human","4":"170","5":"75.0","6":"grey","7":"pale","8":"yellow","9":"82.0","10":"male","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"Palpatine","3":"Human","4":"170","5":"75.0","6":"grey","7":"pale","8":"yellow","9":"82.0","10":"male","11":"masculine","12":"Naboo"},{"1":"Revenge of the Sith","2":"Palpatine","3":"Human","4":"170","5":"75.0","6":"grey","7":"pale","8":"yellow","9":"82.0","10":"male","11":"masculine","12":"Naboo"},{"1":"Return of the Jedi","2":"Palpatine","3":"Human","4":"170","5":"75.0","6":"grey","7":"pale","8":"yellow","9":"82.0","10":"male","11":"masculine","12":"Naboo"},{"1":"The Empire Strikes Back","2":"Boba Fett","3":"Human","4":"183","5":"78.2","6":"black","7":"fair","8":"brown","9":"31.5","10":"male","11":"masculine","12":"Kamino"},{"1":"Attack of the Clones","2":"Boba Fett","3":"Human","4":"183","5":"78.2","6":"black","7":"fair","8":"brown","9":"31.5","10":"male","11":"masculine","12":"Kamino"},{"1":"Return of the Jedi","2":"Boba Fett","3":"Human","4":"183","5":"78.2","6":"black","7":"fair","8":"brown","9":"31.5","10":"male","11":"masculine","12":"Kamino"},{"1":"The Empire Strikes Back","2":"IG-88","3":"Droid","4":"200","5":"140.0","6":"none","7":"metal","8":"red","9":"15.0","10":"none","11":"masculine","12":"NA"},{"1":"The Empire Strikes Back","2":"Bossk","3":"Trandoshan","4":"190","5":"113.0","6":"none","7":"green","8":"red","9":"53.0","10":"male","11":"masculine","12":"Trandosha"},{"1":"The Empire Strikes Back","2":"Lando Calrissian","3":"Human","4":"177","5":"79.0","6":"black","7":"dark","8":"brown","9":"31.0","10":"male","11":"masculine","12":"Socorro"},{"1":"Return of the Jedi","2":"Lando Calrissian","3":"Human","4":"177","5":"79.0","6":"black","7":"dark","8":"brown","9":"31.0","10":"male","11":"masculine","12":"Socorro"},{"1":"The Empire Strikes Back","2":"Lobot","3":"Human","4":"175","5":"79.0","6":"none","7":"light","8":"blue","9":"37.0","10":"male","11":"masculine","12":"Bespin"},{"1":"Return of the Jedi","2":"Ackbar","3":"Mon Calamari","4":"180","5":"83.0","6":"none","7":"brown mottle","8":"orange","9":"41.0","10":"male","11":"masculine","12":"Mon Cala"},{"1":"The Force Awakens","2":"Ackbar","3":"Mon Calamari","4":"180","5":"83.0","6":"none","7":"brown mottle","8":"orange","9":"41.0","10":"male","11":"masculine","12":"Mon Cala"},{"1":"Return of the Jedi","2":"Mon Mothma","3":"Human","4":"150","5":"NA","6":"auburn","7":"fair","8":"blue","9":"48.0","10":"female","11":"feminine","12":"Chandrila"},{"1":"Return of the Jedi","2":"Arvel Crynyd","3":"Human","4":"NA","5":"NA","6":"brown","7":"fair","8":"brown","9":"NA","10":"male","11":"masculine","12":"NA"},{"1":"Return of the Jedi","2":"Wicket Systri Warrick","3":"Ewok","4":"88","5":"20.0","6":"brown","7":"brown","8":"brown","9":"8.0","10":"male","11":"masculine","12":"Endor"},{"1":"Return of the Jedi","2":"Nien Nunb","3":"Sullustan","4":"160","5":"68.0","6":"none","7":"grey","8":"black","9":"NA","10":"male","11":"masculine","12":"Sullust"},{"1":"The Phantom Menace","2":"Qui-Gon Jinn","3":"Human","4":"193","5":"89.0","6":"brown","7":"fair","8":"blue","9":"92.0","10":"male","11":"masculine","12":"NA"},{"1":"Attack of the Clones","2":"Nute Gunray","3":"Neimodian","4":"191","5":"90.0","6":"none","7":"mottled green","8":"red","9":"NA","10":"male","11":"masculine","12":"Cato Neimoidia"},{"1":"The Phantom Menace","2":"Nute Gunray","3":"Neimodian","4":"191","5":"90.0","6":"none","7":"mottled green","8":"red","9":"NA","10":"male","11":"masculine","12":"Cato Neimoidia"},{"1":"Revenge of the Sith","2":"Nute Gunray","3":"Neimodian","4":"191","5":"90.0","6":"none","7":"mottled green","8":"red","9":"NA","10":"male","11":"masculine","12":"Cato Neimoidia"},{"1":"The Phantom Menace","2":"Finis Valorum","3":"Human","4":"170","5":"NA","6":"blond","7":"fair","8":"blue","9":"91.0","10":"male","11":"masculine","12":"Coruscant"},{"1":"Attack of the Clones","2":"Jar Jar Binks","3":"Gungan","4":"196","5":"66.0","6":"none","7":"orange","8":"orange","9":"52.0","10":"male","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"Jar Jar Binks","3":"Gungan","4":"196","5":"66.0","6":"none","7":"orange","8":"orange","9":"52.0","10":"male","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"Roos Tarpals","3":"Gungan","4":"224","5":"82.0","6":"none","7":"grey","8":"orange","9":"NA","10":"male","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"Rugor Nass","3":"Gungan","4":"206","5":"NA","6":"none","7":"green","8":"orange","9":"NA","10":"male","11":"masculine","12":"Naboo"},{"1":"The Phantom Menace","2":"Ric Olié","3":"NA","4":"183","5":"NA","6":"brown","7":"fair","8":"blue","9":"NA","10":"NA","11":"NA","12":"Naboo"},{"1":"Attack of the Clones","2":"Watto","3":"Toydarian","4":"137","5":"NA","6":"black","7":"blue, grey","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Toydaria"},{"1":"The Phantom Menace","2":"Watto","3":"Toydarian","4":"137","5":"NA","6":"black","7":"blue, grey","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Toydaria"},{"1":"The Phantom Menace","2":"Sebulba","3":"Dug","4":"112","5":"40.0","6":"none","7":"grey, red","8":"orange","9":"NA","10":"male","11":"masculine","12":"Malastare"},{"1":"The Phantom Menace","2":"Quarsh Panaka","3":"NA","4":"183","5":"NA","6":"black","7":"dark","8":"brown","9":"62.0","10":"NA","11":"NA","12":"Naboo"},{"1":"Attack of the Clones","2":"Shmi Skywalker","3":"Human","4":"163","5":"NA","6":"black","7":"fair","8":"brown","9":"72.0","10":"female","11":"feminine","12":"Tatooine"},{"1":"The Phantom Menace","2":"Shmi Skywalker","3":"Human","4":"163","5":"NA","6":"black","7":"fair","8":"brown","9":"72.0","10":"female","11":"feminine","12":"Tatooine"},{"1":"The Phantom Menace","2":"Darth Maul","3":"Zabrak","4":"175","5":"80.0","6":"none","7":"red","8":"yellow","9":"54.0","10":"male","11":"masculine","12":"Dathomir"},{"1":"Return of the Jedi","2":"Bib Fortuna","3":"Twi'lek","4":"180","5":"NA","6":"none","7":"pale","8":"pink","9":"NA","10":"male","11":"masculine","12":"Ryloth"},{"1":"Attack of the Clones","2":"Ayla Secura","3":"Twi'lek","4":"178","5":"55.0","6":"none","7":"blue","8":"hazel","9":"48.0","10":"female","11":"feminine","12":"Ryloth"},{"1":"The Phantom Menace","2":"Ayla Secura","3":"Twi'lek","4":"178","5":"55.0","6":"none","7":"blue","8":"hazel","9":"48.0","10":"female","11":"feminine","12":"Ryloth"},{"1":"Revenge of the Sith","2":"Ayla Secura","3":"Twi'lek","4":"178","5":"55.0","6":"none","7":"blue","8":"hazel","9":"48.0","10":"female","11":"feminine","12":"Ryloth"},{"1":"The Phantom Menace","2":"Dud Bolt","3":"Vulptereen","4":"94","5":"45.0","6":"none","7":"blue, grey","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Vulpter"},{"1":"The Phantom Menace","2":"Gasgano","3":"Xexto","4":"122","5":"NA","6":"none","7":"white, blue","8":"black","9":"NA","10":"male","11":"masculine","12":"Troiken"},{"1":"The Phantom Menace","2":"Ben Quadinaros","3":"Toong","4":"163","5":"65.0","6":"none","7":"grey, green, yellow","8":"orange","9":"NA","10":"male","11":"masculine","12":"Tund"},{"1":"Attack of the Clones","2":"Mace Windu","3":"Human","4":"188","5":"84.0","6":"none","7":"dark","8":"brown","9":"72.0","10":"male","11":"masculine","12":"Haruun Kal"},{"1":"The Phantom Menace","2":"Mace Windu","3":"Human","4":"188","5":"84.0","6":"none","7":"dark","8":"brown","9":"72.0","10":"male","11":"masculine","12":"Haruun Kal"},{"1":"Revenge of the Sith","2":"Mace Windu","3":"Human","4":"188","5":"84.0","6":"none","7":"dark","8":"brown","9":"72.0","10":"male","11":"masculine","12":"Haruun Kal"},{"1":"Attack of the Clones","2":"Ki-Adi-Mundi","3":"Cerean","4":"198","5":"82.0","6":"white","7":"pale","8":"yellow","9":"92.0","10":"male","11":"masculine","12":"Cerea"},{"1":"The Phantom Menace","2":"Ki-Adi-Mundi","3":"Cerean","4":"198","5":"82.0","6":"white","7":"pale","8":"yellow","9":"92.0","10":"male","11":"masculine","12":"Cerea"},{"1":"Revenge of the Sith","2":"Ki-Adi-Mundi","3":"Cerean","4":"198","5":"82.0","6":"white","7":"pale","8":"yellow","9":"92.0","10":"male","11":"masculine","12":"Cerea"},{"1":"Attack of the Clones","2":"Kit Fisto","3":"Nautolan","4":"196","5":"87.0","6":"none","7":"green","8":"black","9":"NA","10":"male","11":"masculine","12":"Glee Anselm"},{"1":"The Phantom Menace","2":"Kit Fisto","3":"Nautolan","4":"196","5":"87.0","6":"none","7":"green","8":"black","9":"NA","10":"male","11":"masculine","12":"Glee Anselm"},{"1":"Revenge of the Sith","2":"Kit Fisto","3":"Nautolan","4":"196","5":"87.0","6":"none","7":"green","8":"black","9":"NA","10":"male","11":"masculine","12":"Glee Anselm"},{"1":"The Phantom Menace","2":"Eeth Koth","3":"Zabrak","4":"171","5":"NA","6":"black","7":"brown","8":"brown","9":"NA","10":"male","11":"masculine","12":"Iridonia"},{"1":"Revenge of the Sith","2":"Eeth Koth","3":"Zabrak","4":"171","5":"NA","6":"black","7":"brown","8":"brown","9":"NA","10":"male","11":"masculine","12":"Iridonia"},{"1":"The Phantom Menace","2":"Adi Gallia","3":"Tholothian","4":"184","5":"50.0","6":"none","7":"dark","8":"blue","9":"NA","10":"female","11":"feminine","12":"Coruscant"},{"1":"Revenge of the Sith","2":"Adi Gallia","3":"Tholothian","4":"184","5":"50.0","6":"none","7":"dark","8":"blue","9":"NA","10":"female","11":"feminine","12":"Coruscant"},{"1":"The Phantom Menace","2":"Saesee Tiin","3":"Iktotchi","4":"188","5":"NA","6":"none","7":"pale","8":"orange","9":"NA","10":"male","11":"masculine","12":"Iktotch"},{"1":"Revenge of the Sith","2":"Saesee Tiin","3":"Iktotchi","4":"188","5":"NA","6":"none","7":"pale","8":"orange","9":"NA","10":"male","11":"masculine","12":"Iktotch"},{"1":"The Phantom Menace","2":"Yarael Poof","3":"Quermian","4":"264","5":"NA","6":"none","7":"white","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Quermia"},{"1":"Attack of the Clones","2":"Plo Koon","3":"Kel Dor","4":"188","5":"80.0","6":"none","7":"orange","8":"black","9":"22.0","10":"male","11":"masculine","12":"Dorin"},{"1":"The Phantom Menace","2":"Plo Koon","3":"Kel Dor","4":"188","5":"80.0","6":"none","7":"orange","8":"black","9":"22.0","10":"male","11":"masculine","12":"Dorin"},{"1":"Revenge of the Sith","2":"Plo Koon","3":"Kel Dor","4":"188","5":"80.0","6":"none","7":"orange","8":"black","9":"22.0","10":"male","11":"masculine","12":"Dorin"},{"1":"Attack of the Clones","2":"Mas Amedda","3":"Chagrian","4":"196","5":"NA","6":"none","7":"blue","8":"blue","9":"NA","10":"male","11":"masculine","12":"Champala"},{"1":"The Phantom Menace","2":"Mas Amedda","3":"Chagrian","4":"196","5":"NA","6":"none","7":"blue","8":"blue","9":"NA","10":"male","11":"masculine","12":"Champala"},{"1":"Attack of the Clones","2":"Gregar Typho","3":"Human","4":"185","5":"85.0","6":"black","7":"dark","8":"brown","9":"NA","10":"male","11":"masculine","12":"Naboo"},{"1":"Attack of the Clones","2":"Cordé","3":"Human","4":"157","5":"NA","6":"brown","7":"light","8":"brown","9":"NA","10":"female","11":"feminine","12":"Naboo"},{"1":"Attack of the Clones","2":"Cliegg Lars","3":"Human","4":"183","5":"NA","6":"brown","7":"fair","8":"blue","9":"82.0","10":"male","11":"masculine","12":"Tatooine"},{"1":"Attack of the Clones","2":"Poggle the Lesser","3":"Geonosian","4":"183","5":"80.0","6":"none","7":"green","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Geonosis"},{"1":"Revenge of the Sith","2":"Poggle the Lesser","3":"Geonosian","4":"183","5":"80.0","6":"none","7":"green","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Geonosis"},{"1":"Attack of the Clones","2":"Luminara Unduli","3":"Mirialan","4":"170","5":"56.2","6":"black","7":"yellow","8":"blue","9":"58.0","10":"female","11":"feminine","12":"Mirial"},{"1":"Revenge of the Sith","2":"Luminara Unduli","3":"Mirialan","4":"170","5":"56.2","6":"black","7":"yellow","8":"blue","9":"58.0","10":"female","11":"feminine","12":"Mirial"},{"1":"Attack of the Clones","2":"Barriss Offee","3":"Mirialan","4":"166","5":"50.0","6":"black","7":"yellow","8":"blue","9":"40.0","10":"female","11":"feminine","12":"Mirial"},{"1":"Attack of the Clones","2":"Dormé","3":"Human","4":"165","5":"NA","6":"brown","7":"light","8":"brown","9":"NA","10":"female","11":"feminine","12":"Naboo"},{"1":"Attack of the Clones","2":"Dooku","3":"Human","4":"193","5":"80.0","6":"white","7":"fair","8":"brown","9":"102.0","10":"male","11":"masculine","12":"Serenno"},{"1":"Revenge of the Sith","2":"Dooku","3":"Human","4":"193","5":"80.0","6":"white","7":"fair","8":"brown","9":"102.0","10":"male","11":"masculine","12":"Serenno"},{"1":"Attack of the Clones","2":"Bail Prestor Organa","3":"Human","4":"191","5":"NA","6":"black","7":"tan","8":"brown","9":"67.0","10":"male","11":"masculine","12":"Alderaan"},{"1":"Revenge of the Sith","2":"Bail Prestor Organa","3":"Human","4":"191","5":"NA","6":"black","7":"tan","8":"brown","9":"67.0","10":"male","11":"masculine","12":"Alderaan"},{"1":"Attack of the Clones","2":"Jango Fett","3":"Human","4":"183","5":"79.0","6":"black","7":"tan","8":"brown","9":"66.0","10":"male","11":"masculine","12":"Concord Dawn"},{"1":"Attack of the Clones","2":"Zam Wesell","3":"Clawdite","4":"168","5":"55.0","6":"blonde","7":"fair, green, yellow","8":"yellow","9":"NA","10":"female","11":"feminine","12":"Zolan"},{"1":"Attack of the Clones","2":"Dexter Jettster","3":"Besalisk","4":"198","5":"102.0","6":"none","7":"brown","8":"yellow","9":"NA","10":"male","11":"masculine","12":"Ojom"},{"1":"Attack of the Clones","2":"Lama Su","3":"Kaminoan","4":"229","5":"88.0","6":"none","7":"grey","8":"black","9":"NA","10":"male","11":"masculine","12":"Kamino"},{"1":"Attack of the Clones","2":"Taun We","3":"Kaminoan","4":"213","5":"NA","6":"none","7":"grey","8":"black","9":"NA","10":"female","11":"feminine","12":"Kamino"},{"1":"Attack of the Clones","2":"Jocasta Nu","3":"Human","4":"167","5":"NA","6":"white","7":"fair","8":"blue","9":"NA","10":"female","11":"feminine","12":"Coruscant"},{"1":"The Phantom Menace","2":"Ratts Tyerell","3":"Aleena","4":"79","5":"15.0","6":"none","7":"grey, blue","8":"unknown","9":"NA","10":"male","11":"masculine","12":"Aleen Minor"},{"1":"Attack of the Clones","2":"R4-P17","3":"Droid","4":"96","5":"NA","6":"none","7":"silver, red","8":"red, blue","9":"NA","10":"none","11":"feminine","12":"NA"},{"1":"Revenge of the Sith","2":"R4-P17","3":"Droid","4":"96","5":"NA","6":"none","7":"silver, red","8":"red, blue","9":"NA","10":"none","11":"feminine","12":"NA"},{"1":"Attack of the Clones","2":"Wat Tambor","3":"Skakoan","4":"193","5":"48.0","6":"none","7":"green, grey","8":"unknown","9":"NA","10":"male","11":"masculine","12":"Skako"},{"1":"Attack of the Clones","2":"San Hill","3":"Muun","4":"191","5":"NA","6":"none","7":"grey","8":"gold","9":"NA","10":"male","11":"masculine","12":"Muunilinst"},{"1":"Attack of the Clones","2":"Shaak Ti","3":"Togruta","4":"178","5":"57.0","6":"none","7":"red, blue, white","8":"black","9":"NA","10":"female","11":"feminine","12":"Shili"},{"1":"Revenge of the Sith","2":"Shaak Ti","3":"Togruta","4":"178","5":"57.0","6":"none","7":"red, blue, white","8":"black","9":"NA","10":"female","11":"feminine","12":"Shili"},{"1":"Revenge of the Sith","2":"Grievous","3":"Kaleesh","4":"216","5":"159.0","6":"none","7":"brown, white","8":"green, yellow","9":"NA","10":"male","11":"masculine","12":"Kalee"},{"1":"Revenge of the Sith","2":"Tarfful","3":"Wookiee","4":"234","5":"136.0","6":"brown","7":"brown","8":"blue","9":"NA","10":"male","11":"masculine","12":"Kashyyyk"},{"1":"Revenge of the Sith","2":"Raymus Antilles","3":"Human","4":"188","5":"79.0","6":"brown","7":"light","8":"brown","9":"NA","10":"male","11":"masculine","12":"Alderaan"},{"1":"A New Hope","2":"Raymus Antilles","3":"Human","4":"188","5":"79.0","6":"brown","7":"light","8":"brown","9":"NA","10":"male","11":"masculine","12":"Alderaan"},{"1":"Attack of the Clones","2":"Sly Moore","3":"NA","4":"178","5":"48.0","6":"none","7":"pale","8":"white","9":"NA","10":"NA","11":"NA","12":"Umbara"},{"1":"Revenge of the Sith","2":"Sly Moore","3":"NA","4":"178","5":"48.0","6":"none","7":"pale","8":"white","9":"NA","10":"NA","11":"NA","12":"Umbara"},{"1":"Revenge of the Sith","2":"Tion Medon","3":"Pau'an","4":"206","5":"80.0","6":"none","7":"grey","8":"black","9":"NA","10":"male","11":"masculine","12":"Utapau"},{"1":"The Force Awakens","2":"Finn","3":"Human","4":"NA","5":"NA","6":"black","7":"dark","8":"dark","9":"NA","10":"male","11":"masculine","12":"NA"},{"1":"The Force Awakens","2":"Rey","3":"Human","4":"NA","5":"NA","6":"brown","7":"light","8":"hazel","9":"NA","10":"female","11":"feminine","12":"NA"},{"1":"The Force Awakens","2":"Poe Dameron","3":"Human","4":"NA","5":"NA","6":"brown","7":"light","8":"brown","9":"NA","10":"male","11":"masculine","12":"NA"},{"1":"The Force Awakens","2":"BB8","3":"Droid","4":"NA","5":"NA","6":"none","7":"none","8":"black","9":"NA","10":"none","11":"masculine","12":"NA"},{"1":"The Force Awakens","2":"Captain Phasma","3":"NA","4":"NA","5":"NA","6":"unknown","7":"unknown","8":"unknown","9":"NA","10":"NA","11":"NA","12":"NA"},{"1":"Attack of the Clones","2":"Padmé Amidala","3":"Human","4":"165","5":"45.0","6":"brown","7":"light","8":"brown","9":"46.0","10":"female","11":"feminine","12":"Naboo"},{"1":"The Phantom Menace","2":"Padmé Amidala","3":"Human","4":"165","5":"45.0","6":"brown","7":"light","8":"brown","9":"46.0","10":"female","11":"feminine","12":"Naboo"},{"1":"Revenge of the Sith","2":"Padmé Amidala","3":"Human","4":"165","5":"45.0","6":"brown","7":"light","8":"brown","9":"46.0","10":"female","11":"feminine","12":"Naboo"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -233,7 +241,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> species),</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="starwars_df_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="starwars_df_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -242,6 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="text/javascript" src="links.js"></script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -283,6 +296,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -351,13 +391,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -392,18 +434,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -435,11 +466,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -449,8 +517,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -462,7 +539,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -506,6 +705,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -531,6 +731,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -596,12 +822,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Powered with GitHub and Quarto<br>© Misfer Hamid, 2023</div>
+    <div class="nav-footer-center">
+<p>Powered with GitHub and Quarto<br>© Misfer Hamid, 2023</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
