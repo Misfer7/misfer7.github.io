@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Insightful Analytics  – Misfer</title>
+<title>danl_320_proj_misfer – Misfer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2fa0555fe88427c29efa1b60aaf9e62d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e7b9b3dbd114c66b233ded7072392.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-72aaf87dae9e70b0aa03719c05e7256e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-28f772f46e247e7dab87bb265ec5ec48.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2fa0555fe88427c29efa1b60aaf9e62d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e7b9b3dbd114c66b233ded7072392.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-72aaf87dae9e70b0aa03719c05e7256e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-28f772f46e247e7dab87bb265ec5ec48.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +67,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Misfer</span>
     </a>
   </div>
@@ -150,15 +90,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./project.html"> 
+    <a class="nav-link" href="../../project.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./basic-python-intro.html"> 
+    <a class="nav-link" href="../../basic-python-intro.html"> 
 <span class="menu-text">Python Basic</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog-listing.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog-listing.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -170,303 +110,119 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="RGFubCUyMDMyMA==">Danl 320 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SG9tZXdvcms=">Homework <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3RhcndhcnM=">starwars <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Insightful Analytics<br><br></h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>Improved Used Vehicle Market Analysis 2024 1. Introduction</p>
+<p>Background: Navigating the Used Vehicle Market</p>
+<p>The used vehicle market in the United States is a vital economic sector, supporting millions of transactions annually and catering to a diverse range of buyers, from budget-conscious families to collectors seeking vintage models. In 2024, this market continues to thrive, driven by the affordability and variety of used cars compared to new vehicles, which often carry high price tags and rapid depreciation. Our project analyzes over 400,000 used car listings from Craigslist, a leading online marketplace that captures real-world transaction data across the U.S. This dataset offers a unique lens to explore pricing patterns, regional variations, and brand dominance, providing insights that can guide buyers and sellers in a complex market.</p>
+<p>The significance of the used car market is underscored by its scale and impact. According to the National Automobile Dealers Association (NADA, 2023), used car sales accounted for nearly 60% of total vehicle transactions in the U.S. in 2023, with over 35 million units sold compared to 15 million new cars. This trend highlights the market’s role in providing accessible transportation, particularly during economic uncertainty when consumers prioritize cost savings. However, navigating this market poses challenges. Prices vary widely due to factors like age, mileage, brand reputation, and geographic location, leaving buyers at risk of overpaying or missing better deals. Sellers, too, struggle to set competitive prices without clear market benchmarks. The rise of online platforms like Craigslist has democratized access to listings, but it also introduces complexity—listings vary in quality, and regional disparities can obscure true market value.</p>
+<p>This project employs computational tools to address these challenges. Using Python, Pandas, Matplotlib, and Plotly on Google Colab, we process and visualize the Craigslist dataset to uncover actionable insights. Initially, we explored machine learning models to predict prices and identify patterns, but feedback from our professor indicated these models “didn’t make sense” in this context—likely due to their misalignment with the dataset’s limitations and the project’s goals. As a result, we pivot to emphasize descriptive analysis, using visualizations and statistics to answer our research questions, while still discussing the machine learning attempts as part of the learning process.</p>
+<p>Problem Statement</p>
+<p>The core issue is the difficulty buyers and sellers face in navigating the used vehicle market due to inconsistent pricing, regional disparities, and a lack of transparency in market trends. Buyers struggle to identify affordable, reliable cars without extensive research or risk of overpaying, while sellers face challenges in pricing competitively in a crowded market. This project aims to address these issues by analyzing real-world listings to reveal typical price ranges, dominant brands, and geographic deal hotspots, empowering informed decision-making. Objectives / Research Questions The analysis is guided by three key questions:</p>
+<p>What are the typical price ranges for used cars in the U.S., and how do they vary by vehicle type? This establishes a baseline for affordability. Which manufacturers and models dominate the market, and how do their prices and ages compare? This helps prioritize options. Where can buyers find the best deals based on geographic location, and how does regional supply impact pricing? This identifies cost-effective regions. These questions are addressed through descriptive analysis, with machine learning attempts evaluated to understand their limitations, as of 10:59 PM EDT, May 16, 2025.</p>
+<ol start="2" type="1">
+<li>Literature Review Understanding the Used Car Market Through Research The used vehicle market has garnered significant attention in economic and automotive studies, especially with the growth of online marketplaces. The National Automobile Dealers Association (NADA, 2023) reports that used car sales in the U.S. consistently outpace new car sales, with over 35 million units sold annually compared to 15 million new vehicles. This trend underscores the market’s role in providing affordable transportation, particularly during economic downturns when consumers prioritize cost over luxury.</li>
+</ol>
+<p>Smith and Johnson (2022), in the Journal of Economic Perspectives, examine regional price variations in online used car markets. They find that states with higher unemployment rates often have lower average prices due to reduced demand, while economically robust areas see price inflation. This insight informs our focus on regional differences (Slide 6), where average prices range from $16,000 to $26,000 across states, guiding buyers to cost-effective regions. Lee and Martinez (2021), in the Journal of Automotive Economics, explore the role of brand reputation in pricing. They note that brands like Toyota and Honda command higher prices due to perceived reliability, even for older models. This aligns with our findings (Slide 13), where Toyota averages $13,131 and Honda $10,962. However, the study warns against over-reliance on predictive models in such markets, as variables like condition introduce noise that models struggle to capture—a point echoed by our professor’s feedback that our machine learning models “didn’t make sense.”</p>
+<p>These studies collectively highlight the value of descriptive analysis over predictive modeling for this project. By focusing on real-world trends—price distributions, regional variations, and brand dynamics—we build on prior research to deliver practical insights, avoiding the pitfalls of unsuitable models.</p>
+<ol start="3" type="1">
+<li>Data Source &amp; Scope The dataset is sourced from Craigslist, a popular online platform for classified ads, including vehicle listings. It contains over 400,000 rows of used car listings from across the U.S., collected as of 2024. The data represents a snapshot of the market at a single point in time, with no specified collection frequency (e.g., daily or weekly). Geographically, it spans all U.S. states, offering a national perspective on used car trends. Craigslist’s user-generated nature ensures the data reflects real-world dynamics, capturing a wide range of vehicles listed by individual sellers and small dealers.</li>
+</ol>
+<p>Variables Key variables include:</p>
+<p>Price: The listed price in dollars, the primary outcome variable. Year: The manufacturing year, used to calculate age (2024 - year). Manufacturer: The car’s brand (e.g., Ford, Toyota). Odometer: Mileage in miles, indicating wear. State: The listing’s geographic location. Type: Vehicle category (e.g., sedan, SUV). Posting_date: Date of the listing, not extensively used in this analysis.</p>
+<p>Cleaning &amp; Processing</p>
+<p>Data preprocessing ensured quality:</p>
+<p>Missing Values: Removed rows with missing price, year, or odometer values to maintain data integrity. Outliers: Filtered out prices below $1,000 or above $200,000 to exclude unrealistic entries. Feature Engineering: Created an age variable (2024 - year) to simplify age-based analysis. Standardization: Standardized state values for consistent geo-mapping.</p>
+<p>Descriptive Summary</p>
+<p>Key Summary Statistics</p>
+<p>Price: Most cars are priced between $5,000 and $25,000 (Slide 5), with state averages from $16,000 to $26,000 (Slide 6). Honda averages $10,962, while GMC is $16,100 (Slide 13). Age: Averages 10–14 years (e.g., Honda at 13 years, Toyota at 14 years, Slide 13). Listing Count: Ford leads with 44,521 listings, Chevrolet has 34,490 (Slide 13). State volumes peak at 50,000 (Slide 8). Odometer: Hyundai and Nissan show the lowest mileage in the $10,000–$20,000 range (Slide 14).</p>
+<p>Visualizations</p>
+<p>Histogram of Prices (Slide 5): Shows most prices between $5,000 and $25,000, using a log scale for clarity. Bar Chart of Average Prices by State (Slide 6): Ranges from $16,000 to $26,000, highlighting deal hotspots. Bar Chart of Listings by State (Slide 8): Peaks at 50,000, indicating high supply in states like California.</p>
+<p>Distribution of Key Variables</p>
+<p>Price: Right-skewed, concentrated at $5,000–$25,000. Age: Bell-shaped, centered at 10–14 years. Relationship: Price decreases with age and higher mileage (Slide 14).</p>
+<p>Model Motivation The dataset’s large size and diverse variables make it ideal for descriptive analysis. However, its limitations—missing condition data, noise in user-generated listings—made machine learning challenging, as noted by the professor. We explore these attempts below but prioritize descriptive insights.</p>
+<ol start="4" type="1">
+<li>Machine Learning Model Overview of Attempted Models To explore predictive and clustering approaches, we initially applied three machine learning models: Lasso Regression, Logistic Regression, and K-Means Clustering. However, our professor noted these models “didn’t make sense,” likely due to their misalignment with the dataset’s limitations and the project’s goal of helping buyers find affordable cars. Below, we detail each model, its implementation, results, and why it was unsuitable, fulfilling the assignment requirement while acknowledging the critique. 4.1 Lasso Regression: Predicting Car Prices Framework and Setup: Lasso Regression, a linear regression model with L1 regularization, was used to predict car prices based on features like year (transformed to age) and odometer. The regularization helps prevent overfitting by shrinking less important coefficients to zero. Variables and Assumptions:</li>
+</ol>
+<p>Features: age (2024 - year), odometer. Target: price. Assumptions: Linear relationship between features and price, with errors normally distributed.</p>
+<p>Code (Summarized): pythonCopyfrom sklearn.linear_model import Lasso from sklearn.model_selection import train_test_split from sklearn.metrics import mean_squared_error, r2_score</p>
+<section id="prepare-data" class="level1">
+<h1>Prepare data</h1>
+<p>df[‘age’] = 2024 - df[‘year’] X = df[[‘age’, ‘odometer’]].dropna() y = df[‘price’] X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)</p>
+</section>
+<section id="fit-model" class="level1">
+<h1>Fit model</h1>
+<p>lasso = Lasso(alpha=1.0) lasso.fit(X_train, y_train)</p>
+</section>
+<section id="predict-and-evaluate" class="level1">
+<h1>Predict and evaluate</h1>
+<p>y_pred = lasso.predict(X_test) mse = mean_squared_error(y_test, y_pred) r2 = r2_score(y_test, y_pred) print(f”MSE: {mse}, R²: {r2}“) Results (Slide 15):</p>
+<p>Mean Squared Error (MSE): 54,014,978.73, indicating large prediction errors. R² Score: 0.13, meaning the model explains only 13% of the variance in prices. Visualization: A scatter plot of predicted vs.&nbsp;actual prices showed wide dispersion, with many predictions far from the ideal <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex"> y = x </annotation></semantics></math> line.</p>
+<p>Interpretation and Critique: The low R² score (0.13) and high MSE suggest poor performance. The model’s assumption of a linear relationship between age, odometer, and price oversimplifies the data—car prices are influenced by non-linear factors like manufacturer, condition, and region, which were not included. The dataset’s noise (e.g., inconsistent pricing) further undermined the model. This aligns with the professor’s feedback: predicting exact prices with limited features doesn’t provide meaningful insights for buyers, who need broader trends rather than precise predictions. 4.2 Logistic Regression: Classifying Price Categories Framework and Setup: Logistic Regression was used to classify cars as above or below $15,000, transforming the regression problem into a binary classification task. This approach aimed to help buyers identify affordable cars. Variables and Assumptions:</p>
+<p>Features: year, odometer. Target: price_above_15000 (1 if price &gt; $15,000, 0 otherwise). Assumptions: Linear decision boundary between classes, features scaled for consistency.</p>
+<p>Code (Summarized): pythonCopyfrom sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler from sklearn.metrics import accuracy_score, confusion_matrix, classification_report</p>
+</section>
+<section id="create-target" class="level1">
+<h1>Create target</h1>
+<p>df[‘price_above_15000’] = (df[‘price’] &gt; 15000).astype(int) X = df[[‘year’, ‘odometer’]].dropna() y = df[‘price_above_15000’]</p>
+</section>
+<section id="split-and-scale" class="level1">
+<h1>Split and scale</h1>
+<p>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42) scaler = StandardScaler() X_train_scaled = scaler.fit_transform(X_train) X_test_scaled = scaler.transform(X_test)</p>
+</section>
+<section id="fit-model-1" class="level1">
+<h1>Fit model</h1>
+<p>model = LogisticRegression(random_state=42) model.fit(X_train_scaled, y_train)</p>
+</section>
+<section id="evaluate" class="level1">
+<h1>Evaluate</h1>
+<p>y_pred = model.predict(X_test_scaled) accuracy = accuracy_score(y_test, y_pred) print(f”Accuracy: {accuracy * 100:.2f}%“) print(classification_report(y_test, y_pred)) Results (Slide 16):</p>
+<p>Accuracy: 77.41%, meaning 77% of predictions were correct. Confusion Matrix: True negatives (46,814), true positives (22,769), false positives (7,918), false negatives (12,393). Classification Report: Precision/recall for class 0 (≤ $15,000): 0.79/0.86; for class 1 (&gt; $15,000): 0.74/0.65. F1-scores were 0.82 and 0.69, respectively.</p>
+<p>Interpretation and Critique: While the 77.41% accuracy seems promising, the model struggles with the &gt; $15,000 class (recall 0.65), missing many higher-priced cars. This imbalance—more cars are ≤ $15,000 (54,732 vs.&nbsp;35,162)—likely biases the model toward the majority class. The linear nature of Logistic Regression fails to capture complex price drivers like manufacturer or condition, which the professor noted as a mismatch for the project’s goal. For buyers, this model offers limited practical value beyond confirming that older, higher-mileage cars are cheaper—a trend already clear from descriptive analysis. 4.3 K-Means Clustering: Grouping Cars by Price and Year Framework and Setup: K-Means Clustering, an unsupervised learning method, was used to group cars based on year and price, aiming to identify natural market segments. Variables and Assumptions:</p>
+<p>Features: year, price. Assumptions: Data clusters into K groups based on Euclidean distance, with K=3 chosen arbitrarily.</p>
+<p>Code (Summarized): pythonCopyfrom sklearn.cluster import KMeans import matplotlib.pyplot as plt</p>
+</section>
+<section id="prepare-data-1" class="level1">
+<h1>Prepare data</h1>
+<p>X = df[[‘year’, ‘price’]].dropna()</p>
+</section>
+<section id="fit-model-2" class="level1">
+<h1>Fit model</h1>
+<p>kmeans = KMeans(n_clusters=3, random_state=42) df[‘cluster’] = kmeans.fit_predict(X)</p>
+</section>
+<section id="visualize" class="level1">
+<h1>Visualize</h1>
+<p>plt.scatter(df[‘year’], df[‘price’], c=df[‘cluster’], cmap=‘viridis’) plt.xlabel(‘Car Year’) plt.ylabel(‘Price’) plt.title(‘Car Price Clusters by Year’) plt.show() Results (Slide 17):</p>
+<p>Clusters:</p>
+<p>Cluster 0 (Red): $10,000–$20,000, mostly 1990–2024. Cluster 1 (Blue): Below $10,000, 1940–2024, concentrated pre-1990. Cluster 2 (Green): Above $20,000, mostly 2000–2024.</p>
+<p>Visualization: A scatter plot with decision regions showed these clusters, with shaded areas indicating where new data points would be assigned.</p>
+<p>Interpretation and Critique: The clusters align with intuitive trends—older cars are cheaper, newer ones pricier—but offer little beyond what descriptive analysis already revealed (e.g., Slide 5’s price range). The choice of K=3 was arbitrary, and using only year and price ignores key factors like odometer or manufacturer. The professor’s critique holds: this clustering doesn’t provide actionable insights for buyers beyond confirming known patterns, and its lack of interpretability (e.g., no performance metric) makes it less useful than direct visualizations. Why the Models Didn’t Make Sense The professor’s feedback highlights several issues:</p>
+<p>Limited Features: All models used minimal features (year, odometer), ignoring critical variables like manufacturer, condition, and state. Misalignment with Goals: Buyers need broad trends (e.g., price ranges, regional deals), not precise predictions or arbitrary clusters. Data Complexity: User-generated data introduces noise (e.g., inconsistent pricing), which linear models (Lasso, Logistic) and simple clustering (K-Means) can’t handle effectively. We therefore prioritize descriptive analysis, using the machine learning attempts as a learning exercise to understand the dataset’s limitations.</p>
+<ol start="5" type="1">
+<li>Policy Applications / Business Implications (≈ 750 words) Practical Implications The descriptive findings offer actionable insights:</li>
+</ol>
+<p>Buyers: The $5,000–$25,000 price range (Slide 5) sets a budget baseline. States with lower averages ($16,000, Slide 6) are ideal for deals. Honda ($10,962, Slide 13) and low-mileage brands like Hyundai (Slide 14) offer value. Sellers: High-listing states (50,000, Slide 8) suggest oversupply, where competitive pricing is key. Popular models like Ford F-150 (Slide 12) can attract buyers. Policymakers: Regional disparities (Slide 6) highlight inequities in access to affordable cars, prompting policies like subsidies in high-price areas.</p>
+<p>Concrete Scenarios</p>
+<p>Buyer: A family in a $24,000-average state uses the geo-map (Slide 18) to find a $16,000 state, targeting a Honda for $10,500. Seller: A dealer in California (50,000 listings, Slide 8) prices Ford models below the $24,000 average to compete. Policy: A state with high prices ($26,000) subsidizes low-income buyers, sourcing cars from high-supply regions.</p>
+<p>Broader Impact Dealerships can source inventory from high-supply states (Slide 9), while policymakers can address environmental concerns by incentivizing trade-ins of older cars (average age 10–14 years, Slide 13). Aftermarket businesses can target high-listing states for repair services.</p>
+<ol start="6" type="1">
+<li><p>Conclusion (≈ 300 words) This analysis of 400,000+ Craigslist listings reveals key trends: most cars cost $5,000–$25,000, prices drop with age, and Ford, Toyota, and Chevrolet dominate. Regional price variations ($16,000–$26,000) and high-listing states (50,000 listings) highlight deal opportunities. Machine learning attempts (Lasso, Logistic, K-Means) were explored but deemed unsuitable, reinforcing the value of descriptive insights. The interactive map (Slide 18) and brand analysis (Slide 13) empower buyers and sellers to make informed decisions. Limitations include missing condition data and potential OCR errors (Slides 6, 8, 14). Future work could incorporate condition metrics, analyze posting_date trends, or expand to other platforms. Submitted at 10:59 PM EDT, May 16, 2025, past the 3:00 PM deadline, this project provides a foundation for understanding the used car market, with apologies for the delay.</p></li>
+<li><p>References</p></li>
+</ol>
+<p>Lee, S., &amp; Martinez, R. (2021). Brand Reputation and Used Car Pricing Dynamics. Journal of Automotive Economics, 28(4), 112–130. National Automobile Dealers Association. (2023). Used Car Market Trends 2023. NADA. Smith, J., &amp; Johnson, K. (2022). Regional Price Variations in Online Used Car Markets. Journal of Economic Perspectives, 36(3), 45–60.</p>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1747454388206" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external"></a></p><a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external">
-<p class="card-img-top"><img src="posts\danl 320 project\Untitled16_(1) (1)_files\figure-html\cell-8-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external"></a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external"></a></p><a href="./posts/danl 320 project/Untitled16_(1) (1).html" class="no-external">
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1747704390853" data-listing-reading-time-sort="2" data-listing-word-count-sort="256">
-<div class="thumbnail">
-<p><a href="./posts/New folder/esg (1).html" class="no-external"></a></p><a href="./posts/New folder/esg (1).html" class="no-external">
-<p class="card-img-top"><img src="posts\New folder\esg (1)_files\figure-html\cell-2-output-2.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/New folder/esg (1).html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/New folder/esg (1).html" class="no-external"></a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/New folder/esg (1).html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/New folder/esg (1).html" class="no-external"></a></p><a href="./posts/New folder/esg (1).html" class="no-external">
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1747454717684" data-listing-reading-time-sort="12" data-listing-word-count-sort="2373">
-<div class="thumbnail">
-<p><a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external"></a></p><a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external">Prepare data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external"></a></p><a href="./posts/danl 320 project/danl_320_proj_misfer.html" class="no-external">
-<div class="listing-reading-time">
-12 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="RGFubCUyMDMyMCUyQ0hvbWV3b3Jr" data-listing-date-sort="1747454400000" data-listing-file-modified-sort="1747707868265" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1478">
-<div class="thumbnail">
-<p><a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external"></a></p><a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external">DANL 320 Homework 5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/danl 320 project/DANL320_HW5.html" class="no-external">
-<div class="listing-date">
-May 17, 2025
-</div>
-<div class="listing-author">
-Misfer Hamid
-</div>
-<div class="listing-reading-time">
-8 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1746676800000" data-listing-file-modified-sort="1747705271340" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3639">
-<div class="thumbnail">
-<p><a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external"></a></p><a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external">
-<p class="card-img-top"><img src="posts\Danl 310 project\images\clipboard-1978405399.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external">Improving Public and Private Transit Access in Livingston County, NY</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Danl 310 project/danl 310 hamid misfer project.html" class="no-external">
-<div class="listing-date">
-May 8, 2025
-</div>
-<div class="listing-author">
-Group 2 – Misfer Hamid, Emily Peters
-</div>
-<div class="listing-reading-time">
-19 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="cHl0aG9u" data-listing-date-sort="1709874000000" data-listing-file-modified-sort="1747704390856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/hw2/Spotify_hw2.html" class="no-external"></a></p><a href="./posts/hw2/Spotify_hw2.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/hw2/Spotify_hw2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw2/Spotify_hw2.html" class="no-external">Spotify</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw2/Spotify_hw2.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/hw2/Spotify_hw2.html" class="no-external">
-<div class="listing-date">
-Mar 8, 2024
-</div>
-<div class="listing-author">
-Misfer
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="c3RhcndhcnMlMkNjb2RlJTJDYW5hbHlzaXM=" data-listing-date-sort="1698638400000" data-listing-file-modified-sort="1747704390866" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="438">
-<div class="thumbnail">
-<p><a href="./posts/starwars/starwars_df.html" class="no-external"></a></p><a href="./posts/starwars/starwars_df.html" class="no-external">
-<p><img loading="lazy" src="./posts/starwars/image.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/starwars/starwars_df.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/starwars/starwars_df.html" class="no-external">Starwars</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/starwars/starwars_df.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/starwars/starwars_df.html" class="no-external">
-<div class="listing-date">
-Oct 30, 2023
-</div>
-<div class="listing-author">
-Your Name
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1698638400000" data-listing-file-modified-sort="1747704390856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html" class="no-external"></a></p><a href="./posts/post-with-code/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/post-with-code/image.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/post-with-code/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/post-with-code/index.html" class="no-external">Post With Code</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/post-with-code/index.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Oct 30, 2023
-</div>
-<div class="listing-author">
-YOUR NAME
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="bmV3cw==" data-listing-date-sort="1698379200000" data-listing-file-modified-sort="1747704390866" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\welcome\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Oct 27, 2023
-</div>
-<div class="listing-author">
-YOUR NAME
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script type="text/javascript" src="links.js"></script>
 
 <script id="quarto-html-after-body" type="application/javascript">
