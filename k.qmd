@@ -1,0 +1,11 @@
+---
+title: "My New Blog"
+listing:
+  contents: posts/danl-310-project
+  type: default
+  sort:
+    - date desc
+  categories: true
+  filter-ui: true
+  fields: [date, title, author, reading-time]
+---
